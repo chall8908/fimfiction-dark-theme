@@ -831,12 +831,12 @@ button.styled_button.styled_button_grey .fa {
 
 /* Change chapter container colors  to fit better */
 .story_container ul.chapters {
-  background-color: #adadad;
+  background-color: #282828;
 }
 
 /* Change the chapter information color (# of words for each chapter, etc) */
 .story_container ul.chapters li {
-  color: #FFF;
+  color: rgba(255,255,255,0.8);
 }
 .story_container ul.chapters li.bottom {
   background-color: #787878;
