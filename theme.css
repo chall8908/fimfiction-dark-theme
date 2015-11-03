@@ -1078,6 +1078,12 @@ div.format-toolbar {
   color: #cac8c4;
 }
 
+.format-toolbar>ul>li>a:hover,
+.format-toolbar>ul>li>button:hover {
+  background: #555;
+  border-color: rgba(255,255,255,0.2);
+}
+
 /* Page list info changes (Viewing and buttons) */
 .page_list > ul > li > a,
 .page_list > ul > li > span,
