@@ -120,7 +120,8 @@ div.ad_container ins,
 .list_boxes .blog_posts ul li,
 .story-card,
 .story-card-reverse,
-div.private_messages div.previous_message img.avatar {
+div.private_messages div.previous_message img.avatar,
+div.private_messages div.previous_message div.message_content {
   border-color: rgba(255,255,255,0.2);
 }
 
@@ -310,12 +311,21 @@ div.user-cp-page-tabs > div.right {
 /* Change the background of each message box color */
 div.private_messages div.previous_message {
   background-color: #161616;
+  border-bottom-color: transparent;
 }
 
 /* Change message background color */
 div.private_messages div.previous_message div.message_content {
   background-color: #333;
   color: #cac8c4;
+}
+
+div.private_messages div.previous_message div.message_content div.arrow {
+  border-right-color: rgba(255,255,255,0.4);
+}
+
+div.private_messages div.previous_message div.message_content div.arrow:before {
+  border-right-color: #333;
 }
 
 /**** Begin Feed Page Changes ****/
