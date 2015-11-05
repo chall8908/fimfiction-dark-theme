@@ -139,7 +139,7 @@ div.ad_container ins,
 .story-card-reverse,
 div.private_messages div.previous_message img.avatar,
 div.private_messages div.previous_message div.message_content {
-  border-color: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.1);
 }
 
 /* Link color change to be a different shade of green for readability */
@@ -203,8 +203,14 @@ label.focus input {
  */
 .story-card .info,
 .story-card-reverse .info {
-  background: #737578 none repeat scroll 0% 0%;
-  color: #000;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5);
+}
+
+/* Match background color of the page on the corner card flip */
+.story-card .card-flip .tab-cover,
+.story-card-reverse .card-flip .tab-cover {
+  border-color: transparent #161616 transparent transparent;
 }
 
 /* End Story Card Changes */
@@ -265,7 +271,7 @@ label.focus input {
 /* Gradient fade effect color changes */
 /* This effect is seen at the bottom of the Popular Stories column on the front page */
 div.front_page .popular-stories-container::after {
-  background: transparent linear-gradient(to bottom, rgba(238, 233, 226, 0) 0%, #000 100%) repeat scroll 0% 0%;
+  background: transparent linear-gradient(to bottom, rgba(238, 233, 226, 0) 50%, #161616 100%) repeat scroll 0% 0%;
 }
 
 /* Begin Notification button changes */
@@ -367,8 +373,19 @@ div.private_messages div.previous_message div.message_content div.arrow:before {
 
 /* Change post footer background and text color */
 div.feed div.feed_item div.comment_count {
-  background-color: #737578;
+  background-color: rgba(255,255,255,0.1);
   color: #cac8c4;
+  color: rgba(255,255,255,0.7);
+}
+
+div.feed div.feed_item div.comment_count a {
+  color: #cac8c4;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Hide comment count when it's empty */
+.comment_count:empty {
+  display: none;
 }
 
 /* Change story chapter post header color */
@@ -407,6 +424,12 @@ div.feed div.feed_item.feed_group_item div.feed_header h1 {
   background-color: #cbc458;
 }
 
+/* Change Group Story Added Folder colors */
+div.feed_item a.group_folder {
+  background-color: #202020;
+  color: #ccc;
+}
+
 /* Change Site Blog Post Header Color */
 div.feed div.feed_item.feed_site_blog_post div.feed_header h1 {
   background-color: #c07979;
@@ -416,8 +439,8 @@ div.feed div.feed_item.feed_site_blog_post div.feed_header h1 {
 /* **************Section Separator*************************** */
 /* Begin Front Page Changes */
 div.front_page div.featured_box .right .info {
-  background: #737578 none repeat scroll 0% 0%;
-  color: #000;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5);
 }
 
 /* End Front Page Changes */
@@ -514,7 +537,7 @@ div.user_page div.custom_box_content {
  * page (and on the more blog posts sidebar, as the below code changes)
  */
 .list_boxes .blog_posts .blog_post_preview.has-more::after {
-  background: transparent linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000 100%) repeat scroll 0% 0%;
+  background: transparent linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #161616 100%) repeat scroll 0% 0%;
 }
 
 /* End Blog Page Changes */
