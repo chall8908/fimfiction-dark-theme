@@ -1,40 +1,57 @@
 /* TODO:
-  1) Most things that have some kind of hover effect. I can't seem to find which hovering code is giving the text / icons the color to change them. (Specifically, the icons for the next/previous/chapter buttons and the comment / page control buttons)
+  1) Most things that have some kind of hover effect. I can't seem to find which
+     hovering code is giving the text / icons the color to change them.
+     (Specifically, the icons for the next/previous/chapter buttons and the
+     comment / page control buttons)
 
 
   Here's a list of the most used colors in this theme for reference
     background colors:
-      #333 - used as the primary background for content
-      #161616 - The background of the website, pretty dark to provide contrast for the content
-      #000 - Sometimes you just need actual black
+      #333333 - used as the primary background for content
+      #161616 - The background of the website, pretty dark to provide contrast
+                for the content
+      #000000 - Sometimes you just need actual black
       #737578 - grayish blue background color
 
   text colors:
-    #cac8c4 - Light grey and the main font color, used liberally unless it's too difficult to see.
-    #FFF - because sometimes the only thing that shows up well is white text. Used sparingly in order to reduce eye strain.
-    #000 - black text works well with the #737578 background color
-    #3aa019 - dark green link color, shows up well for the most part. Might need text shadow to bring it to full visibility.
+    #cac8c4 - Light grey and the main font color, used liberally unless it's too
+              difficult to see.
+    #FFFFFF - because sometimes the only thing that shows up well is white text.
+              Used sparingly in order to reduce eye strain.
+    #000000 - black text works well with the #737578 background color
+    #3aa019 - dark green link color, shows up well for the most part. Might need
+              text shadow to bring it to full visibility.
     #5aaC19 - light green link color on hover
-    #323338 - The color of the footer bar on FIMfic, used for the bookshelf story text/link color.
-    #952525 - dark red, also used as a background color in some spots like indicating your current chapter
+    #323338 - The color of the footer bar on FIMfic, used for the bookshelf story
+              text/link color.
+    #952525 - dark red, also used as a background color in some spots like
+              indicating your current chapter
 */
 /**** Global FIMfic Changes ****/
-/* Body color changed to better match Dark Reading Mode on FIMFic. Also fits well with the Firefox FT Deep Dark theme */
+/* Body color changed to better match Dark Reading Mode on FIMFic. Also fits well
+ * with the Firefox FT Deep Dark theme
+ */
 body {
   background-image: none;
   background-color: #161616;
 }
 
 /* Dimmer color change */
-/* applies a fade effect to the background, seen in the background when you go to add a story to a bookshelf */
+/* applies a fade effect to the background, seen in the background when you go to
+ * add a story to a bookshelf
+ */
 .dimmer {
   background-color: rgba(174, 173, 173, 0.7);
 }
 
-/* Blanket changes to try to fix the white boxes (Featured box, story boxes, etc) box being white and resisting normal changes */
-/* Basically, anything that has white as a background color is gonna get changed here */
-/* Surprisingly nuking every tag under the sun with those changes seems to work out pretty well */
-/* Someone can go through and try to sort out what does what and add more specific code blocks to fix colors, but I'm not gonna touch it. It works and doesn't seem to hurt anything */
+/* Blanket changes to try to fix the white boxes (Featured box, story boxes, etc)
+ * box being white and resisting normal changes.
+ * Basically, anything that has white as a background color is gonna get changed here
+ * Surprisingly nuking every tag under the sun with those changes seems to work out pretty well
+ * Someone can go through and try to sort out what does what and add more specific
+ * code blocks to fix colors, but I'm not gonna touch it.
+ * It works and doesn't seem to hurt anything
+ */
 .bookshelf-card,
 .user-card,
 .api-content-box,
@@ -131,7 +148,9 @@ a {
 }
 
 /* Change the background of the link box when a user posts a link in a comment */
-/* This is also how you can change an inline style if need be. The !important is required to overwrite the style */
+/* This is also how you can change an inline style if need be. The !important is
+ * required to overwrite the style
+ */
 .comment_data div {
   background-color: #737578 !important;
 }
@@ -149,7 +168,10 @@ a.user_image_link {
 }
 
 /* Change the selected link color to better match the theme */
-/* This is seen when reading a story chapter, or vising a user's page. The three top 'buttons' of the right column: 'Also Liked, Similar, and Author'. Choosing any of those makes that button change to this color */
+/* This is seen when reading a story chapter, or vising a user's page. The three
+ * top 'buttons' of the right column: 'Also Liked, Similar, and Author'. Choosing
+ * any of those makes that button change to this color
+ */
 .list_boxes h1.header-tabs a.selected {
   background: #6a110c none repeat scroll 0% 0%;
 }
@@ -166,7 +188,9 @@ div.search_options select {
   color: #cac8c4;
 }
 
-/* Fix search and other input field text colors when they're selected so they're readable */
+/* Fix search and other input field text colors when they're selected so they're
+ * readable
+ */
 label.focus input {
   color: #000 !important;
 }
@@ -174,7 +198,9 @@ label.focus input {
 /* End User Top Menu Changes */
 /* **************Section Separator*************************** */
 /* Story Card Changes */
-/* Changes the story card info bar on stories (words, views, votes, etc) background and text color*/
+/* Changes the story card info bar on stories (words, views, votes, etc)
+ * background and text color
+ */
 .story-card .info,
 .story-card-reverse .info {
   background: #737578 none repeat scroll 0% 0%;
@@ -447,8 +473,11 @@ div.bio_followers {
   color: #cac8c4;
 }
 
-/* Changes the background and text color of sidebar content boxes if a user decides they should go horizontal instead of vertical */
-/* an example of this would be anyone that has a Followers or Watchers box as part of their main content instead of with the side bar */
+/* Changes the background and text color of sidebar content boxes if a user
+ * decides they should go horizontal instead of vertical
+ * an example of this would be anyone that has a Followers or Watchers box as
+ * part of their main content instead of with the side bar
+ */
 div.content_box.user_page_content_box h1 {
   background: transparent linear-gradient(to bottom, #777471 0%, #6B6967 100%) repeat scroll 0% 0%;
   color: #FFF;
@@ -481,7 +510,9 @@ div.user_page div.custom_box_content {
 }
 
 /* Gradient fade effect color changes */
-/* This effect is seen at the bottom of the Popular Stories column on the front page (and on the more blog posts sidebar, as the below code changes) */
+/* This effect is seen at the bottom of the Popular Stories column on the front
+ * page (and on the more blog posts sidebar, as the below code changes)
+ */
 .list_boxes .blog_posts .blog_post_preview.has-more::after {
   background: transparent linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #000 100%) repeat scroll 0% 0%;
 }
@@ -652,7 +683,9 @@ table.properties textarea {
   text-shadow: 0px 0px rgba(255, 255, 255, 0.8);
 }
 
-/* make the first item in the button lists on the right column have the same borders as the rest of the list */
+/* make the first item in the button lists on the right column have the same
+ * borders as the rest of the list
+ */
 div.user_cp .tabs h1 {
   border-width: 1px;
   border-style: solid;
@@ -710,7 +743,9 @@ div.group div.folders {
   background-color: #333;
 }
 
-/* change group story folder color, drop shadow color, link color, and add a drop shadow to the link to make it readable  */
+/* change group story folder color, drop shadow color, link color, and add a drop
+ * shadow to the link to make it readable
+ */
 div.group div.folders a.folder {
   background-color: #737578;
   border: 1px solid #CCC;
@@ -937,7 +972,7 @@ div.rating_container {
   text-shadow: 1px 1px #000;
 }
 
-/* Try to change the color of the text for up and down votes, doesn't seem to work though :/ */
+/* Change the color of text for unselected up / down votes */
 div.rating_container a.like_button,
 div.rating_container a.dislike_button {
   color: #FFF;
@@ -1101,8 +1136,8 @@ div.content_box div.content_box_header h2 {
 }
 
 /* **************Section Separator*************************** */
+/* TODO: Merge into newer sections */
 /* Original changes credit quick_study of FIMFic */
-/* The original Stylish / CSS code is available here https://userstyles.org/styles/95784/fim-fic-dark-theme */
 a:hover {
   color: #5aaC19;
 }
