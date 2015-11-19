@@ -144,6 +144,7 @@ div.private_messages div.previous_message div.message_content {
 
 /* Link color change to be a different shade of green for readability */
 a {
+  font-weight: bold;
   color: #3aa019;
 }
 
@@ -307,17 +308,37 @@ div.front_page .popular-stories-container::after {
 }
 
 /* Begin Notification button changes */
-/* Change the background and text color of the notification drop down window */
+/* Change the background and text color of the notifications in the drop down window */
 .nav_bar .nav-bar-list > li > ul.drop-down-notifications li,
 .nav_bar .nav-bar-list > li .nav-bar-drop-down.drop-down-notifications li {
   background: #333;
   color: #cac8c4;
 }
 
+ /* Notification drop down box background color change */ 
+  .nav_bar .nav-bar-list > li > ul, .nav_bar .nav-bar-list > li .nav-bar-drop-down 
+{
+	background: #737578 none repeat scroll 0% 0% padding-box;
+}
+
 /* End Notification button changes */
+
+  /* Global green button hover text color change */
+  /* Makes these buttons match the rest of the site when hovered over, while keeping the link  hover color change for regular text */ 
+  a.styled_button:HOVER {
+	color: #FFF;
+}
 /* End Global FIMfic Changes */
 /* **************Section Separator*************************** */
 /* Begin Specific Page Changes */
+/* Begin Notification Page Changes */
+  /* Menu bar background color change */ 
+  div.content div.notifications div.type_selector
+{
+	background-color: #737578;
+}
+/* End Notification Page Changes */
+/* **************Section Separator*************************** */
 /* Begin Mail page changes */
 /* Change background of mail messages */
 div.user_cp .message_table tr td {
@@ -391,7 +412,8 @@ div.private_messages div.previous_message div.message_content div.arrow {
 div.private_messages div.previous_message div.message_content div.arrow:before {
   border-right-color: #333;
 }
-
+/* End Mail Page Changes */ 
+/* **************Section Separator*************************** */
 /**** Begin Feed Page Changes ****/
 
 /* Change the Feed arrows to match the background */
@@ -473,6 +495,17 @@ div.feed div.feed_item.feed_site_blog_post div.feed_header h1 {
 div.front_page div.featured_box .right .info {
   background: rgba(255,255,255,0.1);
   color: rgba(255,255,255,0.5);
+}
+
+ /* Featured box list background color change */
+  div.front_page div.featured_box .left ul li {
+	background-color: #b1b1b1;
+}
+  
+  /* Selected Featured Box list story background and text color change */ 
+  div.front_page div.featured_box .left ul li.selected {
+	background: #7c7c7c none repeat scroll 0% 0%;
+  color: #cac8c4;
 }
 
 /* End Front Page Changes */
@@ -718,6 +751,11 @@ div.overlay_container table.popup td.footer {
 /* End User Mail Page Changes */
 /* **************Section Separator*************************** */
 /* Begin User Settings Changes */
+/* User Settings buttons hover text color change */
+  div.user_cp .tabs ul li a:HOVER {
+	color: #000;
+}
+
 /* Change titles for each account page to something readable */
 .user-cp-content-box h1 {
   color: #cac8c4;
@@ -813,6 +851,21 @@ div.group div.folders a.folder span.count {
   color: #000;
 }
 
+ /* Trending Groups box background color change */ 
+  div.dashboard ul.list li {
+	background-color: #333;
+  }
+  
+  div.dashboard ul.list li:nth-child(2n+1) {
+	background-color: #333;
+}
+  
+  /* Group Search Results background and text color changes */
+  table.post_table tr {
+	background-color: #adadad;
+    color: #FFF;
+}
+
 /* End Group Page Changes */
 /* **************Section Separator*************************** */
 /* Begin Forum Changes */
@@ -830,17 +883,17 @@ ul.breadcrumbs li::after {
 /* Change forum topic background colors */
 /* Odd topic background color */
 div.thread_list table td:first-child {
-  background-color: #787878;
+  background-color: #adadad;
   color: #FFF;
 }
 
 /* For some reason odds need this extra code to get the Replies and Last Post columns to change too */
 div.thread_list table td:last-child {
-  background-color: #787878;
+  background-color: #adadad;
   color: #FFF;
 }
 div.thread_list table tr td {
-  background-color: #787878;
+  background-color: #adadad;
   color: #FFF;
 }
 
@@ -854,12 +907,22 @@ div.thread_list table tr:nth-child(2n+1) td {
 div.thread_list table td a.thread-title {
   font-weight: bold;
   color: #3aa019;
-  text-shadow: 1px 1px #000;
 }
 
 /* End Forum Changes */
 /* **************Section Separator*************************** */
 /* Begin Story Page Specific Changes */
+/* Story page button hover color changes */ 
+/* Changes statistics and add to group button icon when hovered */
+/* These changes are a bit jerryrigged. It only applies the color when the mouse is directly over the icon, rather than when the button is hovered over. These icons / symbols don't appear to like being changed */ 
+ a.styled_button.styled_button_grey .fa:HOVER {
+    color: #000;
+  }
+  
+a.button_next_comments .fa:HOVER{
+  color #000;
+}
+
 /* Fix selected page number to match the rest of the page number borders */
 .page_list > ul > li.selected > a,
 .page_list_info > ul > li.selected > a {
@@ -1116,6 +1179,38 @@ button.styled_button.styled_button_grey:HOVER {
 .button-group-vertical .drop-down ul li.selected a {
   color: #FFF;
   background: #6a110c none repeat scroll 0% 0%;
+}
+
+/* drop down chapter hover text color change */
+  .button-group .drop-down ul li a:HOVER {
+	color: #000;
+}
+/* End chapter menu drop down changes */ 
+
+/* Story comment buttons hover color changes */ 
+/* Changes the color of the refresh comments icon when hovered */ 
+  a.refresh_comments:HOVER {
+    color: #000;
+  }
+  
+  /* Changes the comment settings icon when hovered */
+  a.drop-down-expander:HOVER {
+    color: #000;
+  }
+  
+  /* Changes the post new comment icon when hovered */ 
+  a.jump-to:HOVER {
+    color: #000;
+  }
+  
+  /* Changes the comment page number text color when hovered */
+li.page a:HOVER {
+  color: #000;
+}
+  
+  /* Changes the next comment page number icon when hovered */ 
+.fa:HOVER {
+color: #000;
 }
 
 /* Comment like color change */
