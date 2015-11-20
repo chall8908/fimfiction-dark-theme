@@ -209,6 +209,13 @@ a.user_image_link {
   background: #6a110c none repeat scroll 0% 0%;
 }
 
+  /* Global change for "white"/grey buttons text hover color */
+  /* Not sure about the colors in this change, but it needs something to tell the user they're hoving over a button */ 
+  a.styled_button.styled_button_white:HOVER {
+    color: #000;
+    background-color: #b1b1b1;
+  }
+
 /* User Top Menu Changes */
 .user_toolbar > ul > li ul {
   color: #cac8c4;
@@ -331,6 +338,13 @@ div.front_page .popular-stories-container::after {
 /* End Global FIMfic Changes */
 /* **************Section Separator*************************** */
 /* Begin Specific Page Changes */
+/* Begin Login Page Changes */
+/* Login page 'register a new account' text changes */ 
+  .register-box {
+	color: #cac8c4;
+}
+/* End Login Page Changes */
+/* **************Section Separator*************************** */
 /* Begin Notification Page Changes */
   /* Menu bar background color change */ 
   div.content div.notifications div.type_selector
@@ -684,6 +698,17 @@ div.user_page div.custom_box_content {
 /* Related Groups stories and members text color change */
 div.list_boxes ul.list li span.info {
   color: #cac8c4;
+}
+
+  /* Change the page number text color on hover for bookshelves */ 
+  div.page_list a:HOVER {
+     color: #000;
+  } 
+  
+  /* Bookshelf filter tag background and text color change */
+  .selected-tags, .aggregate-tags {
+	border: 1px solid #CCC;
+	background: #787878 none repeat scroll 0% 0%;
 }
 
 /* End Bookshelf changes */
