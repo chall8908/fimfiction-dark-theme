@@ -1245,11 +1245,6 @@ li.page a:HOVER {
   color: #000;
 }
   
-  /* Changes the next comment page number icon when hovered */ 
-.fa:HOVER {
-color: #000;
-}
-
 /* Comment like color change */
 .comment .comment_information .comment_like_text {
   color: #49c81f;
