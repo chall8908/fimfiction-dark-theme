@@ -36,6 +36,18 @@ body {
   background-color: #161616;
 }
 
+  /* Firefox code to change text selection / highlight color  */
+  ::-moz-selection { 
+    color: #cac8c4;
+    background: #0b67d8;
+}
+
+   /* Code to change text selection / highlight color  */
+::selection {
+    color: #cac8c4;
+    background: #0b67d8;
+}
+
 /* Dimmer color change */
 /* applies a fade effect to the background, seen in the background when you go to
  * add a story to a bookshelf
