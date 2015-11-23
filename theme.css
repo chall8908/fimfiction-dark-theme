@@ -957,7 +957,7 @@ div.thread_list table td a.thread-title {
   }
   
 a.button_next_comments .fa:HOVER{
-  color #000;
+  color: #000;
 }
 
 /* Fix selected page number to match the rest of the page number borders */
