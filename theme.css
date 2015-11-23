@@ -347,6 +347,11 @@ div.front_page .popular-stories-container::after {
   a.styled_button:HOVER {
 	color: #FFF;
 }
+
+  /* Drop down menu text color change */ 
+  .drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer, .drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer-right {
+	color: #cac8c4;
+	}
 /* End Global FIMfic Changes */
 /* **************Section Separator*************************** */
 /* Begin Specific Page Changes */
@@ -537,6 +542,26 @@ div.front_page div.featured_box .right .info {
 /* End Front Page Changes */
 /* **************Section Separator*************************** */
 /* Begin User Page Changes */
+/* Begin Edit User Page Changes */ 
+/* Change the background and text color of the top and bottom 'bars' of the user page module options box */
+/* Module options box background  */ 
+  div.user_page_content_box {
+	background-color: #333333;
+}
+
+ /* Top header bar background color and text change */ 
+  div.content_box div.content_box_header {
+	color: #FFF;
+	background: #737578;
+}
+  
+  /* Bottom header bar background color change */
+  /* Using :last-child lets you select the last div of the parent, which, in this case was a div wihtout a class or id */ 
+ #user_page_editing_toolbar div:last-child {
+     background-color: #737578 !important;
+  }
+  /* End Edit User Page Changes */ 
+  
 /* Begin user main page changes */
 /* Change user online color to be readable */
 .user-page-header .online {
