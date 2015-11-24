@@ -863,6 +863,12 @@ div.user_cp .tabs h1 {
 /* End User Settings Changes */
 /* **************Section Separator*************************** */
 /* Begin Group Page (and related) Changes */
+/* Group Notification Settings background and text color changes */ 
+  div.group div.settings {
+	color: #cac8c4;
+	background-color: #333;
+}
+
 /* Story Featured in fixes */
 .list_boxes .groups ul li a span {
   color: #cac8c4;
