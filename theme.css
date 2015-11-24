@@ -952,29 +952,34 @@ ul.breadcrumbs li::after {
 /* Odd topic background color */
 div.thread_list table td:first-child {
   background-color: #adadad;
-  color: #FFF;
+  color: #000;
 }
 
 /* For some reason odds need this extra code to get the Replies and Last Post columns to change too */
 div.thread_list table td:last-child {
   background-color: #adadad;
-  color: #FFF;
+  color: #000;
 }
 div.thread_list table tr td {
   background-color: #adadad;
-  color: #FFF;
+  color: #000;
 }
 
 /* Even topic background color */
 div.thread_list table tr:nth-child(2n+1) td {
   background-color: #adadad;
-  color: #FFF;
+  color: #000;
 }
 
 /* Forum topic link color */
 div.thread_list table td a.thread-title {
   font-weight: bold;
   color: #3aa019;
+}
+
+  /* Change the text color of the forum header text (Thread and Last Post) */
+  div.thread_list table tr.header td {
+  color: #FFF;
 }
 
 /* End Forum Changes */
