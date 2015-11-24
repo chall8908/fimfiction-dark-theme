@@ -1151,7 +1151,7 @@ button.styled_button.styled_button_grey .fa {
   background-color: #161616;
 }
 
-/* Rating box changes */
+/* Begin Raiting Box changes */
 /* Rating Box text color change */
 div.rating_container {
   color: #e0ecff;
@@ -1179,8 +1179,9 @@ div.rating_container a.dislike_button_selected {
 div.rating_container a.like_button_selected {
   color: #49c81f;
 }
+/* End Raiting Box changes */
 
-/* Change bookshelf bar */
+/* Begin Bookshelf Bar Changes */
 /* Changes the bookshelf bar background */
 .story-toolbar .bookshelves li.unselected {
   background: #5e636e none repeat scroll 0% 0% !important;
@@ -1201,6 +1202,7 @@ div.rating_container a.like_button_selected {
 .story-toolbar .bookshelves li.unselected.show-bookshelves-popup span {
   color: #cac8c4;
 }
+/* End Bookshelf Bar Changes */
 
 /* Author's note changes */
 div.chapter_content .authors-note {
@@ -1238,7 +1240,7 @@ button.styled_button.styled_button_grey:HOVER {
   color: #cac8c4;
 }
 
-/* Chapter menu drop down changes */
+/* Begin Chapter menu drop down changes */
 /* Change the background of the menu to match the theme */
 .button-group .drop-down,
 .button-group-vertical .drop-down {
@@ -1260,7 +1262,8 @@ button.styled_button.styled_button_grey:HOVER {
 }
 /* End chapter menu drop down changes */ 
 
-/* Story comment buttons hover color changes */ 
+/* Begin Comment Specific Changes */
+/* Begin Story Comment Buttons Hover color changes */ 
 /* Changes the color of the refresh comments icon when hovered */ 
   a.refresh_comments:HOVER {
     color: #000;
@@ -1280,6 +1283,27 @@ button.styled_button.styled_button_grey:HOVER {
 li.page a:HOVER {
   color: #000;
 }
+/* End Story Comment Buttons Hover color changes */ 
+
+  /* Changes the background color of the comment preview box when you hover over a green username link in a comment */ 
+  div.quote_container {
+	background-color: #161616 !important;
+}
+  
+  /* Fixes the expanded comment having a background that went outside its box */  
+  .comment.expanded_comment  {
+	background: #333 !important;
+}
+
+  /* Changes the body text of an expanded comment to be more readable */ 
+    .comment.expanded_comment .data  {
+	color: #000 !important;
+}
+  
+  /* Changes the header of an expanded comment to be more readable */
+  .comment.expanded_comment .comment_information {
+    	color: #FFF !important;
+  }
   
 /* Comment like color change */
 .comment .comment_information .comment_like_text {
@@ -1301,20 +1325,20 @@ blockquote {
   background: #adadad none repeat scroll 0% 0%;
 }
 
-/* Comment box changes */
+/* Comment input box changes */
 /* Changes the content box for entering your comments */
 textarea#comment_comment {
   background-color: #36393e;
   color: #cac8c4;
 }
 
-/* Edit comment text box changes */
+/* Edit comment input text box changes */
 .comment .data .edit_area textarea {
   background-color: #36393e;
   color: #cac8c4;
 }
 
-/* Changes the comment footer color */
+/* Changes the comment input box footer color */
 div.add_comment_toolbar {
   background: #36393e;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #686a6e), color-stop(100%, #77797c));
@@ -1322,7 +1346,7 @@ div.add_comment_toolbar {
   background: linear-gradient(to bottom, #686a6e 0%, #77797c 100%);
 }
 
-/* Changes the toolbar background and text color (where you can choose the formatting you want to use) */
+/* Changes the comment input boxtoolbar background and text color (where you can choose the formatting you want to use) */
 div.format-toolbar {
   background: #36393e;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #686a6e), color-stop(100%, #77797c));
@@ -1344,7 +1368,7 @@ div.format-toolbar {
 .page_list_info > ul > li > span {
   color: #cac8c4;
 }
-
+/* End Comment Specific Changes */
 /* End Story Chapter Specific Changes */
 /* **************Section Separator*************************** */
 /* Begin Chat Page Changes */
