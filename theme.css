@@ -11,8 +11,16 @@
       #161616 - The background of the website, pretty dark to provide contrast
                 for the content
       #000000 - Sometimes you just need actual black
-      #737578 - grayish blue background color
-
+      #737578 - grayish blue background color (used for quoted user comments)
+      #A29E96 - background for the bar at the top when viewing a story chapter or user page
+      #CBC9C4 - background of the smaller info box inside the above bar 
+      #36393E - darker greyish blue background color (used for author's notes)
+      #7C7C7C - dark grey background for the selected story feature box
+      #B1B1B1 - ligher grey background for the feature box
+      #484848 - very dark grey used as the background for the small story infocards (views, words, etc)
+      #787878 - dark grey background for tags/filters
+      #ADADAD - light grey background for forum and group topics 
+      
   text colors:
     #cac8c4 - Light grey and the main font color, used liberally unless it's too
               difficult to see.
