@@ -796,7 +796,7 @@ table.properties .bbcode-editor textarea {
 
 /* Changes Recipient box colors */
 table.properties input[type="text"] {
-  background: #36393e;
+  background-color: #36393e;
   color: #cac8c4;
   text-shadow: 0px 0px;
 }
