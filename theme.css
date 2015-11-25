@@ -717,6 +717,12 @@ div.user_page div.custom_box_content {
 /* Bookshelf Changes */
 /* Changes colors on a user's individual bookshelves */
 /* Bookshelf Sidebar Changes */
+/* Change the background and text color of the tags when you search for them in bookmarks */ 
+  .tags-dropdown li {
+    background: #787878;
+    color: #000;
+}
+
 /* Change bookshelf Title color */
 .user_blog_post .right .bookshelves .bookshelf-name a {
   color: #FFF;
