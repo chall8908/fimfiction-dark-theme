@@ -844,17 +844,22 @@ div.tooltip_popup_tooltip {
 }
 
 /* Change drop down selection menu background and text color. Also remove text shadow */
+/* This affects text fields as well, password and name input fields specifically */
 table.properties input,
 table.properties select,
 table.properties textarea {
   color: #cac8c4;
-  background-color: #3a3a3a;
+  background-color: #333;
   text-shadow: 0px 0px rgba(255, 255, 255, 0.8);
 }
 
+/* change the background color of text input fields (the short bio text field in Edit Account is an example) */
+table.properties input[type="text"] {
+   background-color: #333;
+}
+
 /* make the first item in the button lists on the right column have the same
- * borders as the rest of the list
- */
+ * borders as the rest of the list */
 div.user_cp .tabs h1 {
   border-width: 1px;
   border-style: solid;
