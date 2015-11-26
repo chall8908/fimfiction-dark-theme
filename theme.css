@@ -363,6 +363,19 @@ div.front_page .popular-stories-container::after {
 /* End Global FIMfic Changes */
 /* **************Section Separator*************************** */
 /* Begin Specific Page Changes */
+/* Begin News Page changes */ 
+/* Change the background and text color of the links in the side bar */ 
+  .site-post-tags.generic_content_box_content a {
+	color: #cac8c4;
+	background: #333 none repeat scroll 0% 0%;
+}
+  
+/* Change the text color of the links in the side bar on hover */ 
+    .site-post-tags.generic_content_box_content a:HOVER {
+	color: #000;
+}
+/* End News Page Changes */
+/* **************Section Separator*************************** */
 /* Begin Login Page Changes */
 /* Login page 'register a new account' text changes */ 
   .register-box {
@@ -729,6 +742,11 @@ div.user_page div.custom_box_content {
   .tags-dropdown li {
     background: #787878;
     color: #000;
+}
+
+/* Change the color of the number count for tags in bookshelves */ 
+.selected-tags li .count, .aggregate-tags li .count {
+	color: #cac8c4;
 }
 
 /* Change bookshelf Title color */
