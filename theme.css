@@ -973,7 +973,7 @@ div.group div.folders a.folder span.count {
   /* Group Search Results background and text color changes */
   table.post_table tr {
 	background-color: #adadad;
-    color: #FFF;
+    color: #000;
 }
 
 /* End Group Page Changes */
