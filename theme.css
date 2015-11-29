@@ -360,6 +360,11 @@ div.front_page .popular-stories-container::after {
   .drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer, .drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer-right {
 	color: #cac8c4;
 	}
+	
+ /* Error message pop-up box body text color change */ 
+  .drop-down-pop-up-container .drop-down-pop-up {
+	color: #cac8c4;
+}
 /* End Global FIMfic Changes */
 /* **************Section Separator*************************** */
 /* Begin Specific Page Changes */
