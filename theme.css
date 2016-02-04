@@ -13,14 +13,14 @@
       #000000 - Sometimes you just need actual black
       #737578 - grayish blue background color (used for quoted user comments)
       #A29E96 - background for the bar at the top when viewing a story chapter or user page
-      #CBC9C4 - background of the smaller info box inside the above bar 
+      #CBC9C4 - background of the smaller info box inside the above bar
       #36393E - darker greyish blue background color (used for author's notes)
       #7C7C7C - dark grey background for the selected story feature box
       #B1B1B1 - ligher grey background for the feature box
       #484848 - very dark grey used as the background for the small story infocards (views, words, etc)
       #787878 - dark grey background for tags/filters
-      #ADADAD - light grey background for forum and group topics 
-      
+      #ADADAD - light grey background for forum and group topics
+
   text colors:
     #cac8c4 - Light grey and the main font color, used liberally unless it's too
               difficult to see.
@@ -44,16 +44,16 @@ body {
   background-color: #161616;
 }
 
-  /* Firefox code to change text selection / highlight color  */
-  ::-moz-selection { 
-    color: #cac8c4;
-    background: #0b67d8;
+/* Firefox code to change text selection / highlight color  */
+::-moz-selection {
+  color: #cac8c4;
+  background: #0b67d8;
 }
 
-   /* Code to change text selection / highlight color  */
+/* Code to change text selection / highlight color  */
 ::selection {
-    color: #cac8c4;
-    background: #0b67d8;
+  color: #cac8c4;
+  background: #0b67d8;
 }
 
 /* Dimmer color change */
@@ -229,12 +229,12 @@ a.user_image_link {
   background: #6a110c none repeat scroll 0% 0%;
 }
 
-  /* Global change for "white"/grey buttons text hover color */
-  /* Not sure about the colors in this change, but it needs something to tell the user they're hoving over a button */ 
-  a.styled_button.styled_button_white:HOVER {
-    color: #000;
-    background-color: #b1b1b1;
-  }
+/* Global change for "white"/grey buttons text hover color */
+/* Not sure about the colors in this change, but it needs something to tell the user they're hoving over a button */
+a.styled_button.styled_button_white:HOVER {
+  color: #000;
+  background-color: #b1b1b1;
+}
 
 /* User Top Menu Changes */
 .user_toolbar > ul > li ul {
@@ -342,55 +342,55 @@ div.front_page .popular-stories-container::after {
   color: #cac8c4;
 }
 
- /* Notification drop down box background color change */ 
-  .nav_bar .nav-bar-list > li > ul, .nav_bar .nav-bar-list > li .nav-bar-drop-down 
-{
-	background: #737578 none repeat scroll 0% 0% padding-box;
-}
+/* Notification drop down box background color change */
+.nav_bar .nav-bar-list > li > ul, .nav_bar .nav-bar-list > li .nav-bar-drop-down
+                                   {
+	                                   background: #737578 none repeat scroll 0% 0% padding-box;
+                                   }
 
 /* End Notification button changes */
 
-  /* Global green button hover text color change */
-  /* Makes these buttons match the rest of the site when hovered over, while keeping the link  hover color change for regular text */ 
-  a.styled_button:HOVER {
+/* Global green button hover text color change */
+/* Makes these buttons match the rest of the site when hovered over, while keeping the link  hover color change for regular text */
+a.styled_button:HOVER {
 	color: #FFF;
 }
 
-  /* Drop down menu text color change */ 
-  .drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer, .drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer-right {
+/* Drop down menu text color change */
+.drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer, .drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer-right {
 	color: #cac8c4;
-	}
-	
- /* Error message pop-up box body text color change */ 
-  .drop-down-pop-up-container .drop-down-pop-up {
+}
+
+/* Error message pop-up box body text color change */
+.drop-down-pop-up-container .drop-down-pop-up {
 	color: #cac8c4;
 }
 /* End Global FIMfic Changes */
 /* **************Section Separator*************************** */
 /* Begin Specific Page Changes */
-/* Begin News Page changes */ 
-/* Change the background and text color of the links in the side bar */ 
-  .site-post-tags.generic_content_box_content a {
+/* Begin News Page changes */
+/* Change the background and text color of the links in the side bar */
+.site-post-tags.generic_content_box_content a {
 	color: #cac8c4;
 	background: #333 none repeat scroll 0% 0%;
 }
-  
-/* Change the text color of the links in the side bar on hover */ 
-    .site-post-tags.generic_content_box_content a:HOVER {
+
+/* Change the text color of the links in the side bar on hover */
+.site-post-tags.generic_content_box_content a:HOVER {
 	color: #000;
 }
 /* End News Page Changes */
 /* **************Section Separator*************************** */
 /* Begin Login Page Changes */
-/* Login page 'register a new account' text changes */ 
-  .register-box {
+/* Login page 'register a new account' text changes */
+.register-box {
 	color: #cac8c4;
 }
 /* End Login Page Changes */
 /* **************Section Separator*************************** */
 /* Begin Notification Page Changes */
-  /* Menu bar background color change */ 
-  div.content div.notifications div.type_selector
+/* Menu bar background color change */
+div.content div.notifications div.type_selector
 {
 	background-color: #737578;
 }
@@ -398,14 +398,55 @@ div.front_page .popular-stories-container::after {
 /* **************Section Separator*************************** */
 /* Begin Mail page changes */
 /* Change background of mail messages */
-div.user_cp .message_table tr td {
+div.user_cp .message_table tr, div.user_cp .message_table tr.unread {
   background: #333;
   color: #cac8c4;
 }
 
+div.user_cp .message_table tr.unread td:last-child {
+  position: relative;
+}
+
+div.user_cp .message_table tr.unread td:last-child:after {
+  content: 'Unread';
+
+  position: absolute;
+  top: 20px;
+  right: -21px;
+
+  border: 2px solid #6b8d13;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px 40px 40px 0px/0px 20px 20px 0px;
+
+  padding: 2px 15px 2px 10px;
+
+  background-color: #6b8d13;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, right top, from(#8dba19), to(#6b8d13));
+  background-image: -moz-linear-gradient(left, #8dba19, #6b8d13);
+  background-image: -ms-linear-gradient(left, #8dba19, #6b8d13);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #8dba19), color-stop(100%, #6b8d13));
+  background-image: -webkit-linear-gradient(left, #8dba19, #6b8d13);
+  background-image: -o-linear-gradient(left, #8dba19, #6b8d13);
+  background-image: linear-gradient(left, #8dba19, #6b8d13);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8dba19', endColorstr='#6b8d13', GradientType=0);
+  color: #eee;
+
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
 /* Change the link color of a mail message subject */
+div.user_cp .message_table tr.unread a.title {
+  color: #fff;
+}
+
 div.user_cp .message_table a.title {
-  color: #FFF;
+  color: #eee;
 }
 
 /* Change author of message link color */
@@ -429,9 +470,14 @@ div.user-cp-page-tabs {
 }
 
 /* Change toolbar button background and text color */
+div.user-cp-page-tabs ul li, div.user-cp-page-tabs ul li:first-child {
+  border-color: #444;
+}
+
 div.user-cp-page-tabs ul li a {
   color: #FFF;
   background: #737578;
+  text-shadow: 1px 1px rgba(0,0,0,0.4);
 }
 
 /* Change background and text color of selected toolbar button */
@@ -469,7 +515,7 @@ div.private_messages div.previous_message div.message_content div.arrow {
 div.private_messages div.previous_message div.message_content div.arrow:before {
   border-right-color: #333;
 }
-/* End Mail Page Changes */ 
+/* End Mail Page Changes */
 /* **************Section Separator*************************** */
 /**** Begin Feed Page Changes ****/
 
@@ -554,13 +600,13 @@ div.front_page div.featured_box .right .info {
   color: rgba(255,255,255,0.5);
 }
 
- /* Featured box list background color change */
-  div.front_page div.featured_box .left ul li {
+/* Featured box list background color change */
+div.front_page div.featured_box .left ul li {
 	background-color: #b1b1b1;
 }
-  
-  /* Selected Featured Box list story background and text color change */ 
-  div.front_page div.featured_box .left ul li.selected {
+
+/* Selected Featured Box list story background and text color change */
+div.front_page div.featured_box .left ul li.selected {
 	background: #7c7c7c none repeat scroll 0% 0%;
   color: #cac8c4;
 }
@@ -568,26 +614,26 @@ div.front_page div.featured_box .right .info {
 /* End Front Page Changes */
 /* **************Section Separator*************************** */
 /* Begin User Page Changes */
-/* Begin Edit User Page Changes */ 
+/* Begin Edit User Page Changes */
 /* Change the background and text color of the top and bottom 'bars' of the user page module options box */
-/* Module options box background  */ 
-  div.user_page_content_box {
+/* Module options box background  */
+div.user_page_content_box {
 	background-color: #333333;
 }
 
- /* Top header bar background color and text change */ 
-  div.content_box div.content_box_header {
+/* Top header bar background color and text change */
+div.content_box div.content_box_header {
 	color: #FFF;
 	background: #737578;
 }
-  
-  /* Bottom header bar background color change */
-  /* Using :last-child lets you select the last div of the parent, which, in this case was a div wihtout a class or id */ 
- #user_page_editing_toolbar div:last-child {
-     background-color: #737578 !important;
-  }
-  /* End Edit User Page Changes */ 
-  
+
+/* Bottom header bar background color change */
+/* Using :last-child lets you select the last div of the parent, which, in this case was a div wihtout a class or id */
+#user_page_editing_toolbar div:last-child {
+  background-color: #737578 !important;
+}
+/* End Edit User Page Changes */
+
 /* Begin user main page changes */
 /* Change user online color to be readable */
 .user-page-header .online {
@@ -743,13 +789,13 @@ div.user_page div.custom_box_content {
 /* Bookshelf Changes */
 /* Changes colors on a user's individual bookshelves */
 /* Bookshelf Sidebar Changes */
-/* Change the background and text color of the tags when you search for them in bookmarks */ 
-  .tags-dropdown li {
-    background: #787878;
-    color: #000;
+/* Change the background and text color of the tags when you search for them in bookmarks */
+.tags-dropdown li {
+  background: #787878;
+  color: #000;
 }
 
-/* Change the color of the number count for tags in bookshelves */ 
+/* Change the color of the number count for tags in bookshelves */
 .selected-tags li .count, .aggregate-tags li .count {
 	color: #cac8c4;
 }
@@ -774,13 +820,13 @@ div.list_boxes ul.list li span.info {
   color: #cac8c4;
 }
 
-  /* Change the page number text color on hover for bookshelves */ 
-  div.page_list a:HOVER {
-     color: #000;
-  } 
-  
-  /* Bookshelf filter tag background and text color change */
-  .selected-tags, .aggregate-tags {
+/* Change the page number text color on hover for bookshelves */
+div.page_list a:HOVER {
+  color: #000;
+}
+
+/* Bookshelf filter tag background and text color change */
+.selected-tags, .aggregate-tags {
 	border: 1px solid #CCC;
 	background: #787878 none repeat scroll 0% 0%;
 }
@@ -851,7 +897,7 @@ div.overlay_container table.popup td.footer {
 /* **************Section Separator*************************** */
 /* Begin User Settings Changes */
 /* User Settings buttons hover text color change */
-  div.user_cp .tabs ul li a:HOVER {
+div.user_cp .tabs ul li a:HOVER {
 	color: #000;
 }
 
@@ -878,7 +924,7 @@ table.properties textarea {
 
 /* change the background color of text input fields (the short bio text field in Edit Account is an example) */
 table.properties input[type="text"] {
-   background-color: #333;
+  background-color: #333;
 }
 
 /* make the first item in the button lists on the right column have the same
@@ -905,8 +951,8 @@ div.user_cp .tabs h1 {
 /* End User Settings Changes */
 /* **************Section Separator*************************** */
 /* Begin Group Page (and related) Changes */
-/* Group Notification Settings background and text color changes */ 
-  div.group div.settings {
+/* Group Notification Settings background and text color changes */
+div.group div.settings {
 	color: #cac8c4;
 	background-color: #333;
 }
@@ -961,19 +1007,19 @@ div.group div.folders a.folder span.count {
   color: #000;
 }
 
- /* Trending Groups box background color change */ 
-  div.dashboard ul.list li {
-	background-color: #333;
-  }
-  
-  div.dashboard ul.list li:nth-child(2n+1) {
+/* Trending Groups box background color change */
+div.dashboard ul.list li {
 	background-color: #333;
 }
-  
-  /* Group Search Results background and text color changes */
-  table.post_table tr {
+
+div.dashboard ul.list li:nth-child(2n+1) {
+	background-color: #333;
+}
+
+/* Group Search Results background and text color changes */
+table.post_table tr {
 	background-color: #adadad;
-    color: #000;
+  color: #000;
 }
 
 /* End Group Page Changes */
@@ -1019,21 +1065,21 @@ div.thread_list table td a.thread-title {
   color: #3aa019;
 }
 
-  /* Change the text color of the forum header text (Thread and Last Post) */
-  div.thread_list table tr.header td {
+/* Change the text color of the forum header text (Thread and Last Post) */
+div.thread_list table tr.header td {
   color: #FFF;
 }
 
 /* End Forum Changes */
 /* **************Section Separator*************************** */
 /* Begin Story Page Specific Changes */
-/* Story page button hover color changes */ 
+/* Story page button hover color changes */
 /* Changes statistics and add to group button icon when hovered */
-/* These changes are a bit jerryrigged. It only applies the color when the mouse is directly over the icon, rather than when the button is hovered over. These icons / symbols don't appear to like being changed */ 
- a.styled_button.styled_button_grey .fa:HOVER {
-    color: #000;
-  }
-  
+/* These changes are a bit jerryrigged. It only applies the color when the mouse is directly over the icon, rather than when the button is hovered over. These icons / symbols don't appear to like being changed */
+a.styled_button.styled_button_grey .fa:HOVER {
+  color: #000;
+}
+
 a.button_next_comments .fa:HOVER{
   color: #000;
 }
@@ -1299,54 +1345,54 @@ button.styled_button.styled_button_grey:HOVER {
 }
 
 /* drop down chapter hover text color change */
-  .button-group .drop-down ul li a:HOVER {
+.button-group .drop-down ul li a:HOVER {
 	color: #000;
 }
-/* End chapter menu drop down changes */ 
+/* End chapter menu drop down changes */
 
 /* Begin Comment Specific Changes */
-/* Begin Story Comment Buttons Hover color changes */ 
-/* Changes the color of the refresh comments icon when hovered */ 
-  a.refresh_comments:HOVER {
-    color: #000;
-  }
-  
-  /* Changes the comment settings icon when hovered */
-  a.drop-down-expander:HOVER {
-    color: #000;
-  }
-  
-  /* Changes the post new comment icon when hovered */ 
-  a.jump-to:HOVER {
-    color: #000;
-  }
-  
-  /* Changes the comment page number text color when hovered */
+/* Begin Story Comment Buttons Hover color changes */
+/* Changes the color of the refresh comments icon when hovered */
+a.refresh_comments:HOVER {
+  color: #000;
+}
+
+/* Changes the comment settings icon when hovered */
+a.drop-down-expander:HOVER {
+  color: #000;
+}
+
+/* Changes the post new comment icon when hovered */
+a.jump-to:HOVER {
+  color: #000;
+}
+
+/* Changes the comment page number text color when hovered */
 li.page a:HOVER {
   color: #000;
 }
-/* End Story Comment Buttons Hover color changes */ 
+/* End Story Comment Buttons Hover color changes */
 
-  /* Changes the background color of the comment preview box when you hover over a green username link in a comment */ 
-  div.quote_container {
+/* Changes the background color of the comment preview box when you hover over a green username link in a comment */
+div.quote_container {
 	background-color: #161616 !important;
 }
-  
-  /* Fixes the expanded comment having a background that went outside its box */  
-  .comment.expanded_comment  {
+
+/* Fixes the expanded comment having a background that went outside its box */
+.comment.expanded_comment  {
 	background: #333 !important;
 }
 
-  /* Changes the body text of an expanded comment to be more readable */ 
-    .comment.expanded_comment .data  {
+/* Changes the body text of an expanded comment to be more readable */
+.comment.expanded_comment .data  {
 	color: #000 !important;
 }
-  
-  /* Changes the header of an expanded comment to be more readable */
-  .comment.expanded_comment .comment_information {
-    	color: #FFF !important;
-  }
-  
+
+/* Changes the header of an expanded comment to be more readable */
+.comment.expanded_comment .comment_information {
+  color: #FFF !important;
+}
+
 /* Comment like color change */
 .comment .comment_information .comment_like_text {
   color: #49c81f;
