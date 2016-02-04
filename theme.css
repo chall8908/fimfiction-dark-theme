@@ -85,7 +85,6 @@ div.feed div.feed_item img.avatar,
 div.front_page div.featured_box,
 div.thread_list table td img.avatar,
 .statistics .graph,
-.story_content_box,
 .story_container img.story_avatar,
 .story-list .right,
 .story-list .story-image img,
@@ -1241,6 +1240,11 @@ button.styled_button.styled_button_grey .fa {
 }
 #chapter_scrubber_bar {
   background-color: #161616;
+}
+
+/* Ensure that the background color of chapters is consistent */
+.story_content_box {
+  background: #1a1a1a;
 }
 
 /* Begin Raiting Box changes */
