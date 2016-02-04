@@ -1370,8 +1370,16 @@ button.styled_button.styled_button_grey:HOVER {
 
 /* drop down chapter hover text color change */
 .button-group .drop-down ul li a:HOVER {
-	color: #000;
+  background: #EEE !important;
+  color: #000;
 }
+  
+  /* Keep the current/selected chapter color the same on hover */
+  .button-group .drop-down ul li.selected a:HOVER {
+  background: #6a110c !important;
+  color: #000;
+}
+
 /* End chapter menu drop down changes */
 
 /* Begin Comment Specific Changes */
