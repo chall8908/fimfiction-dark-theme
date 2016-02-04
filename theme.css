@@ -430,7 +430,6 @@ div.user_cp .message_table tr.unread td:last-child:after {
   background-image: -webkit-linear-gradient(left, #8dba19, #6b8d13);
   background-image: -o-linear-gradient(left, #8dba19, #6b8d13);
   background-image: linear-gradient(left, #8dba19, #6b8d13);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8dba19', endColorstr='#6b8d13', GradientType=0);
   color: #eee;
 
   -webkit-transform: rotate(90deg);
