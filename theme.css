@@ -1292,9 +1292,11 @@ div.rating_container a.like_button_selected {
 /* End Bookshelf Bar Changes */
 
 /* Author's note changes */
-div.chapter_content .authors-note {
-  background: #36393e none repeat scroll 0% 0%;
-  color: #cac8c4;
+/* Interestingly, all the themes have an author's note setting for them, these two work with the Dark color setting for FIMfic chapters. The .content_format_wob authors-note is required followed by the theme you want to change. */
+.content_format_wob div.authors-note, .content_format_luna div.authors-note {
+	border-color: #FFF !important;
+	background: #36393e !important;
+	color: #cac8c4 !important;
 }
 
   /* Changes the background and text color of blockquotes that authors seem to use in their story chapters to something that's readable. */
