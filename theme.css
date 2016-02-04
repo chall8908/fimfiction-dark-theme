@@ -1297,6 +1297,14 @@ div.chapter_content .authors-note {
   color: #cac8c4;
 }
 
+  /* Changes the background and text color of blockquotes that authors seem to use in their story chapters to something that's readable. */
+  /* Interestingly, all the themes have a block quote setting for them, these two work with the Dark color setting for FIMfic chapters. The .content_format_wob blockquote is required followed by the theme you want to change. */
+  /* This does not appear to affect other blockquotes, such has user comment quotes */ 
+.content_format_wob blockquote, .content_format_luna blockquote {
+  background-color: #36393E;
+  color: #cac8c4;
+  }
+
 /* Change chapter footer */
 div.chapter_footer {
   color: #FFF;
