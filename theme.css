@@ -517,6 +517,22 @@ div.private_messages div.previous_message div.message_content div.arrow:before {
 /* **************Section Separator*************************** */
 /**** Begin Feed Page Changes ****/
 
+/* Begin User Posted New Story Header Bar Changes */
+/* This changes a small bar of color before the < arrow and the actual text */
+  div.feed div.feed_item.feed_new_story div.feed_header {
+	border-color: #578CB5;
+}
+  /* This changes the background color of the bar behind the text */
+  div.feed div.feed_item.feed_new_story div.feed_header h1 {
+	background-color: #578CB5;
+}
+  /* This changes the arrow color */ 
+  div.feed div.feed_item.feed_new_story div.arrow_colour {
+	border-left-color: #578CB5 !important;
+	border-right-color: #578CB5 !important;
+}
+/* End User Posted New Story Header Bar Changes */
+
 /* Change the Feed arrows to match the background */
 .feed_column:nth-child(1) div.feed_item div.arrow {
   border-right: 11px solid rgba(255,255,255,0.4);
