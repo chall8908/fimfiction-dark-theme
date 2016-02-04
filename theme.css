@@ -1242,9 +1242,15 @@ button.styled_button.styled_button_grey .fa {
   background-color: #161616;
 }
 
-/* Ensure that the background color of chapters is consistent */
+/* Change the background color of the story content box to match the theme */
 .story_content_box {
-  background: #1a1a1a;
+  background: #333333;
+  color: #cac8c4;
+}
+
+  /* Ensure that the background color of chapters is consistent */
+div.chapter {
+	background: #1a1a1a;
 }
 
 /* Begin Raiting Box changes */
