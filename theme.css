@@ -683,6 +683,11 @@ div.bio_followers {
   color: #cac8c4;
 }
 
+  /* Change the link color for a username list (followers box) on a user's page */ 
+div.user_page div.bio_followers ul.names li a span.name {
+	color:#3aa019;
+}
+
 /* Changes the background and text color of sidebar content boxes if a user
  * decides they should go horizontal instead of vertical
  * an example of this would be anyone that has a Followers or Watchers box as
