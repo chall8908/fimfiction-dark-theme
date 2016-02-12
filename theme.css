@@ -406,12 +406,12 @@ div.user_cp .message_table tr.unread td:last-child {
   position: relative;
 }
 
-div.user_cp .message_table tr.unread td:last-child:after {
+div.user_cp .message_table tr.unread td:last-child:before {
   content: 'Unread';
 
   position: absolute;
   top: 20px;
-  right: -21px;
+  left: -45px;
 
   border: 2px solid #6b8d13;
   border-left: 0px;
