@@ -1548,6 +1548,79 @@ color: #000;
   
   /* End Character Tag Page Changes */
   /* **************Section Separator*************************** */
+  
+    /* Begin Tag Information Page Changes */
+  /* Change the tag background and text color on the FAQ --> Tag Information page */ 
+  .tags_information p .tag {
+	background-color: #787878;
+  color: #FFF;
+}
+  
+/* End Tag Information Page Changes */
+  /* **************Section Separator*************************** */
+  
+  /* Begin Writing Guide Page Changes */
+  /* Change the page heading text color */
+  div.writing_guide h1 {
+	color: #cac8c4;
+}
+
+  /* Change the body text color */
+  div.writing_guide .writing-guide-content {
+	color: #cac8c4;
+}
+  
+  /* Change the color of the quote/example boxes, remove the text shadow, and make the border visible */
+  div.writing_guide blockquote {
+	background-color: #ADADAD;
+    text-shadow: 0px 0px rgba(255,255,255,0.8);
+    border: 1px dashed rgba(234, 234, 234, 1);
+}
+  
+  /* Change the color of the good/bad example boxes */
+  div.writing_guide code, div.writing_guide kbd {
+	background-color: #ADADAD;
+}
+  
+  /* Change the color of the "bad" text to be more readable */
+  div.writing_guide .bad {
+	color: #952525;
+}
+  
+  /* Change the heading 3 color */
+  div.writing_guide h3 {
+	color: #cac8c4;
+}
+  
+  /* Begin Back to Top link color changes */ 
+  div.writing_guide .backtop a {
+	color: #3aa019;
+}
+  
+  /* needs fixing */ 
+  div.writing_guide .backtop a:hover {
+    color: rgb(50, 51, 56) !important;
+  }
+  
+  div.writing_guide .backtop a:visited {
+	color: #000;
+}
+  /* End Back to Top link color changes */
+  
+  /* Begin Appendix A table color changes */
+  div.writing_guide table.solid tr.odd {
+	background: #ADADAD;
+  color: #000;
+}
+  
+  div.writing_guide table.solid tr.even {
+	background: #ADADAD;
+  color: #000;
+}
+  /* End Appendix A table color changes */
+  
+  /* End Writing Guide Page Changes */
+  /* **************Section Separator*************************** */
 
 /* **************Section Separator*************************** */
 /* TODO: Merge into newer sections */
