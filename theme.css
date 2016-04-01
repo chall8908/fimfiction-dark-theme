@@ -526,7 +526,7 @@ div.private_messages div.previous_message div.message_content div.arrow:before {
   div.feed div.feed_item.feed_new_story div.feed_header h1 {
 	background-color: #578CB5;
 }
-  /* This changes the arrow color */ 
+  /* This changes the arrow color */
   div.feed div.feed_item.feed_new_story div.arrow_colour {
 	border-left-color: #578CB5 !important;
 	border-right-color: #578CB5 !important;
@@ -698,7 +698,7 @@ div.bio_followers {
   color: #cac8c4;
 }
 
-  /* Change the link color for a username list (followers box) on a user's page */ 
+  /* Change the link color for a username list (followers box) on a user's page */
 div.user_page div.bio_followers ul.names li a span.name {
 	color:#3aa019;
 }
@@ -1337,7 +1337,7 @@ div.rating_container a.like_button_selected {
 
   /* Changes the background and text color of blockquotes that authors seem to use in their story chapters to something that's readable. */
   /* Interestingly, all the themes have a block quote setting for them, these two work with the Dark color setting for FIMfic chapters. The .content_format_wob blockquote is required followed by the theme you want to change. */
-  /* This does not appear to affect other blockquotes, such has user comment quotes */ 
+  /* This does not appear to affect other blockquotes, such has user comment quotes */
 .content_format_wob blockquote, .content_format_luna blockquote {
   background-color: #36393E;
   color: #cac8c4;
@@ -1394,7 +1394,7 @@ button.styled_button.styled_button_grey:HOVER {
   background: #EEE !important;
   color: #000;
 }
-  
+
   /* Keep the current/selected chapter color the same on hover */
   .button-group .drop-down ul li.selected a:HOVER {
   background: #6a110c !important;
@@ -1519,51 +1519,51 @@ div.content_box div.content_box_header h2 {
 }
 /* End Chat Page Changes */
 /* **************Section Separator*************************** */
-  /* Begin Character Tag Page Changes */ 
+  /* Begin Character Tag Page Changes */
   /* Change character name and related tag text to be readable */
   .tag-header h1 a, .tag-header h2 a {
 	color: #000;
 }
-  
+
   /* Change the color of the symbol infront of the Related Tags text to be visible */
   .fa-tags::before {
 	color: #000;
 }
-  
+
   /* Change the 'art by' text to be readable */
   .tag-header .image {
 	color: #000;
 }
-  
-  /* Change story heading text color to be readable */ 
+
+  /* Change story heading text color to be readable */
   .tag-page .main-content h1 {
 	color: #cac8c4;
 
 }
-  
-  /* Change the meta table information to be more readable */ 
+
+  /* Change the meta table information to be more readable */
   .tag-page .tag-meta table.properties td {
 color: #000;
 }
-  
+
   /* change the meta table headings to be more readable */
   .tag-page .tag-meta table.properties td.label {
 	color: #FFF;
 }
-  
+
   /* End Character Tag Page Changes */
   /* **************Section Separator*************************** */
-  
+
     /* Begin Tag Information Page Changes */
-  /* Change the tag background and text color on the FAQ --> Tag Information page */ 
+  /* Change the tag background and text color on the FAQ --> Tag Information page */
   .tags_information p .tag {
 	background-color: #787878;
   color: #FFF;
 }
-  
+
 /* End Tag Information Page Changes */
   /* **************Section Separator*************************** */
-  
+
   /* Begin Writing Guide Page Changes */
   /* Change the page heading text color */
   div.writing_guide h1 {
@@ -1574,56 +1574,56 @@ color: #000;
   div.writing_guide .writing-guide-content {
 	color: #cac8c4;
 }
-  
+
   /* Change the color of the quote/example boxes, remove the text shadow, and make the border visible */
   div.writing_guide blockquote {
 	background-color: #ADADAD;
     text-shadow: 0px 0px rgba(255,255,255,0.8);
     border: 1px dashed rgba(234, 234, 234, 1);
 }
-  
+
   /* Change the color of the good/bad example boxes */
   div.writing_guide code, div.writing_guide kbd {
 	background-color: #ADADAD;
 }
-  
+
   /* Change the color of the "bad" text to be more readable */
   div.writing_guide .bad {
 	color: #952525;
 }
-  
+
   /* Change the heading 3 color */
   div.writing_guide h3 {
 	color: #cac8c4;
 }
-  
-  /* Begin Back to Top link color changes */ 
+
+  /* Begin Back to Top link color changes */
   div.writing_guide .backtop a {
 	color: #3aa019;
 }
-  
-  /* needs fixing */ 
+
+  /* needs fixing */
   div.writing_guide .backtop a:hover {
     color: rgb(50, 51, 56) !important;
   }
-  
+
   div.writing_guide .backtop a:visited {
 	color: #000;
 }
   /* End Back to Top link color changes */
-  
+
   /* Begin Appendix A table color changes */
   div.writing_guide table.solid tr.odd {
 	background: #ADADAD;
   color: #000;
 }
-  
+
   div.writing_guide table.solid tr.even {
 	background: #ADADAD;
   color: #000;
 }
   /* End Appendix A table color changes */
-  
+
   /* End Writing Guide Page Changes */
   /* **************Section Separator*************************** */
 
