@@ -1089,6 +1089,11 @@ div.thread_list table tr.header td {
   color: #FFF;
 }
 
+  /* Change lock icon color for locked threads */ 
+  div.thread_list table td i.fa-lock {
+	color: #952525;
+}
+
 /* End Forum Changes */
 /* **************Section Separator*************************** */
 /* Begin Story Page Specific Changes */
