@@ -1562,6 +1562,14 @@ color: #000;
 }
 
 /* End Tag Information Page Changes */
+   /* **************Section Separator*************************** */
+  /* Begin FAQ Page Changes */ 
+  /*Change the answer box to FAQ questions to fit the theme */  
+  .faq .answers > li.expanded .answer, .rules .answers > li.expanded .answer, .tags_information .answers > li.expanded .answer {
+    background-color: #ADADAD;
+    color: #000;
+}
+  /* End FAQ Page Changes */ 
   /* **************Section Separator*************************** */
 
   /* Begin Writing Guide Page Changes */
