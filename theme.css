@@ -1108,6 +1108,11 @@ a.button_next_comments .fa:HOVER{
   color: #000;
 }
 
+  /* Fix the image link box background color if used in story description to match the theme */ 
+  .description div {
+    background-color: #737578 !important;
+  }
+  
 /* Fix selected page number to match the rest of the page number borders */
 .page_list > ul > li.selected > a,
 .page_list_info > ul > li.selected > a {
