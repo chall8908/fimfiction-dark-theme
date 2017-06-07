@@ -87,6 +87,10 @@ background: #727477;
 	background: #adadad;
 }
 
+  /* Change the color of the 'Continue Reading' box story title link on the front page */ 
+.front_page .currently-reading-list .title {
+color: #cac8c4;
+}
     /**** End Blog Posts, Front Page, and Misc changes ****/
   
   /**** Emote menu changes ****/
@@ -139,7 +143,7 @@ background-color: #5e636e;
 }
  /* Remove the text shadow from the ratings box and reset the text color */
   .story_container .story-top-toolbar .right {
-	text-shadow: 0px 0px white;
+	text-shadow: 0px 0px black;
 	color: #aeb1b6;
 }
   
