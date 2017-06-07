@@ -163,6 +163,13 @@ background-color: #5e636e;
 	-webkit-transition: color .2s;
 	transition: color .2s;
 }
+
+  /* change the spoiler tag background back to the way it was for visibility */
+  .bbcode .spoiler, .article .spoiler {
+	background-color: #000;
+	color: transparent;
+	text-shadow: none;
+}
   /**** End story page changes ****/ 
   
   /**** Begin Chapter Changes ****/ 
