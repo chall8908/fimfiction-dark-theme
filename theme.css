@@ -91,6 +91,11 @@ background: #727477;
 .front_page .currently-reading-list .title {
 color: #cac8c4;
 }
+
+  /* change the color of the progress bar for the continue reading box to something a little less glaring */ 
+  .front_page .currently-reading-list li .read-progress {
+	background: #3aa019;
+}
     /**** End Blog Posts, Front Page, and Misc changes ****/
   
   /**** Emote menu changes ****/
