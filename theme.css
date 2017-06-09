@@ -92,11 +92,36 @@ background: #727477;
 color: #cac8c4;
 }
 
-  /* change the color of the progress bar for the continue reading box to something a little less glaring */ 
+   /* change the color of the progress bar for the continue reading box to something a little less glaring */ 
   .front_page .currently-reading-list li .read-progress {
-	background: #3aa019;
+	background: #308215;
 }
+  
+  /* change the story info text color for the 'continue reading' box on the front page */
+  .list_boxes .list .info {
+	color: #cac8c4;
+}
+  
+  
     /**** End Blog Posts, Front Page, and Misc changes ****/
+  
+  /**** Begin Bookshelf Page changes ****/
+    /* change the bookshelf title link text color in the 'My Bookshelves' sidebar when you're viewing a bookshelf. */
+  .list_boxes .bookshelves .bookshelf-name {
+	color: #cac8c4 !important;
+}
+  
+  /* change the selected bookshelf info card at the top of the sidebar when viewing a bookshelf */ 
+  .list_boxes .bookshelves li.selected
+  {
+    background-color: #333;
+  }
+  
+  /* change the bookshelf info card description text color when viewing a bookshelf */ 
+  .list_boxes .bookshelves .bookshelf-description {
+color: #cac8c4;
+}
+  /**** End Bookshelf Page Changes ****/
   
   /**** Emote menu changes ****/
  /* comment / post emote menu changes */ 
