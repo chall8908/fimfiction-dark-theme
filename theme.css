@@ -473,13 +473,13 @@ background: linear-gradient(to bottom, #43474f 0%,#32353b 100%);
   /**** End News Feed Changes ****/
 
  /**** Begin User Page Changes ****/
-  
   /* change the color of the following button gradient if you're following a user to be more noticable */
   button.styled_button.styled_button_dark_grey.button-follow.button_toggle.button_user_watch[data-watch="true"] {
-	  background: #81b945;
-background: -moz-linear-gradient(top, #81b945 0%, #6fa03c 100%);
-background: -webkit-linear-gradient(top, #81b945 0%,#6fa03c 100%);
-background: linear-gradient(to bottom, #81b945 0%,#6fa03c 100%);
+    background: #81b945;
+    background: -moz-linear-gradient(top, #81b945 0%, #6fa03c 100%);
+    background: -webkit-linear-gradient(top, #81b945 0%,#6fa03c 100%);
+    background: linear-gradient(to bottom, #81b945 0%,#6fa03c 100%);
+    text-shadow: 0px 0px rgba(255,255,255,0.3)
 }
   /**** End User Page changes ****/
   
