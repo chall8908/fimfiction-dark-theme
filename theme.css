@@ -102,6 +102,10 @@ color: #cac8c4;
 	color: #cac8c4;
 }
   
+  /* change the background of the info bar when you click on an image to see it bigger */ 
+  .lightbox .caption {
+	background: #333;
+}
   
     /**** End Blog Posts, Front Page, and Misc changes ****/
   
