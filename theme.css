@@ -82,6 +82,22 @@ background: #727477;
 	font-weight: bold;
 	color: #3aa019;
 }
+
+  /* change the background of a quoted user comment box to fit with the other quote box color */
+  .comment.inline-quote .data {
+background: #36393E !important;
+}
+  
+  /* change the rating bar and quote text of a quoted user comment box to fit with the other quote box color */ 
+  .comment.inline-quote .data div {
+background: #36393E !important;
+}
+  
+  /* change the number of likes on a comment color to be a bit more visible green */ 
+  .comment .comment_information .comment-like .like-text {
+	color: #5aaC19;
+}
+
   /* Change the background color of user comment block quotes */ 
   .bbcode blockquote, .article blockquote {
 	background: #adadad;
