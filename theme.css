@@ -94,7 +94,7 @@ color: #cac8c4;
 
    /* change the color of the progress bar for the continue reading box to something a little less glaring */ 
   .front_page .currently-reading-list li .read-progress {
-	background: #308215;
+	background: #1f560d;
 }
   
   /* change the story info text color for the 'continue reading' box on the front page */
@@ -148,6 +148,12 @@ background: #282828;
   /**** End emote menu changes ****/ 
   
   /**** Begin New Story Page changes (the page when you click a story link. Has its description, chapters, etc) */
+
+  /* change the color of the progres bar for a story/chaper when viewing its story page */
+  .story_container .chapters > li .read-progress {
+	background: #1f560d;
+}
+
   /* change the chapter footer bar back to the way it was */ 
   .story_container .chapters-footer {
 	background-color: #5e636e;
