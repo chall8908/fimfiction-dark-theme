@@ -122,6 +122,21 @@ color: #cac8c4;
   .lightbox .caption {
 	background: #333;
 }
+
+  /* fix like and dislike icons for comments to be visible again */ 
+  .comment .comment_information .comment-like span {
+	color: #cac8c4;
+}
+  
+  /* fix the browse button menu links to be visible again */ 
+  .nav_bar .nav-bar-list > li > ul.browse-pane ul li a, .nav_bar .nav-bar-list > li .nav-bar-drop-down.browse-pane ul li a {
+	color: #cac8c4;
+}
+  
+  /* change the color of the browse button menu link hover */
+  .nav_bar .nav-bar-list > li > ul.browse-pane ul li a:hover, .nav_bar .nav-bar-list > li .nav-bar-drop-down.browse-pane ul li a:hover {
+	color: #FFF;
+}
   
     /**** End Blog Posts, Front Page, and Misc changes ****/
   
