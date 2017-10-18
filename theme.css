@@ -345,6 +345,16 @@ background: linear-gradient(to bottom, #43474f 0%,#32353b 100%);
 	background-color: #333 !important;
 		color: #cac8c4 !important;
 }
+
+/* change the background color of the group story folders */
+.folder_list table td .folder {
+	background-color: #484848;
+}
+
+/* change the background color of the group story folders when you hover over them */
+.folder_list table td .folder:hover {
+	background-color: #161616;
+}
   /**** End Groups Page Changes ****/
   
   /**** Begin PM Page Changes ****/ 
