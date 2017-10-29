@@ -36,7 +36,7 @@
               indicating your current chapter
 */
 
- /**** FIMFic 4.0 Fixes ****/
+/**** FIMFic 4.0 Fixes ****/
   /* Updates and fixes to get the theme working for the 4.0 update of FIMFic on 6/5/2017. 
    * Changes are kept separate  to help troubleshoot future updates to the site as the new FIMFic update continues to be worked on by their devs */   
   
@@ -187,7 +187,7 @@ background: #282828;
 
   /* change the chapter footer bar back to the way it was */ 
   .story_container .chapters-footer {
-	background-color: #5e636e;
+	background-color: #3f3f3f;
 	color: #cac8c4;
 }
   /* Change the chapter footer published date box */ 
@@ -198,33 +198,31 @@ background: #282828;
 }
   
 /* Change the story page chapter list background and color */   
-  .story_container ul.chapters li {
-     background: #282828 !important;
-    border-bottom-color: #FFF !important;
+.story_container ul.chapters li {
+  background: #282828 !important;
+  border-bottom-color: #FFF !important;
 }
   
   /* Changes the top border between the chapters in the chapter list to be a little more visible */ 
 .story_container .chapters li {
 	border-top: 1px solid #333;
 }
-  
-  /* Changes the background of the ratings box at the top right of the story page */
-  .rating_container {
-background-color: #5e636e;
-}
+
  /* Remove the text shadow from the ratings box and reset the text color */
-  .story_container .story-top-toolbar .right {
-	text-shadow: 0px 0px black;
+.story_container .story-top-toolbar .right {
+  background: #3f3f3f;
+  border-color: #444;
 	color: #aeb1b6;
 }
   
   /* Set the background color for the bookshelf buttons in the top left of a story page */ 
  .story-top-toolbar .bookshelves li.unselected {
-	background: #5e636e !important;
+	background: #3f3f3f !important;
 }
   
   /* Remove the text shadow from the bookshelf buttons */
-  .story-top-toolbar .bookshelves li {
+.story-top-toolbar .bookshelves li {
+  color: #cac8c4;
 	text-shadow: 0px 0px rgba(255,255,255,0.5);
 }
   
@@ -1158,11 +1156,20 @@ div.content_box div.content_box_header {
   color: #3aa019;
 }
 
+.user-page-header .mini-info-box {
+  color: rgba(0,0,0,0.8);
+  text-shadow: none;
+}
+
 /* Change user tabs to a different color matching the theme */
 .user-page-header .tabs li a {
   background: #cbc9c4;
   text-shadow: 1px 1px rgba(255, 255, 255, 0.4);
   color: #242322;
+}
+
+.user-page-header > .inner h1 a {
+  color: #ccc;
 }
 
 /* Change user body content boxes to have readable text */
@@ -1740,8 +1747,11 @@ button.styled_button.styled_button_grey .fa {
 /* Story Info Bar background color change */
 .story-page-header,
 .user-page-header {
-  background-color: #a29e96;
-  color: #000;
+  background-color: #333;
+  color: #eee;
+  text-shadow: 0px 1px 0 #1a1a19;
+  border-bottom: 1px solid #111;
+  box-shadow: none;
 }
 
 /* Story Info Bar mini box color change (Published and views box at top of story ) */
