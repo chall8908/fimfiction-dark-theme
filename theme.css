@@ -1156,7 +1156,7 @@ div.content_box div.content_box_header {
   color: #3aa019;
 }
 
-.user-page-header .mini-info-box {
+.story-page-header .mini-info-box, .user-page-header .mini-info-box {
   color: rgba(0,0,0,0.8);
   text-shadow: none;
 }
@@ -1168,7 +1168,7 @@ div.content_box div.content_box_header {
   color: #242322;
 }
 
-.user-page-header > .inner h1 a {
+.story-page-header >.inner h1, .user-page-header >.inner h1 {
   color: #ccc;
 }
 
