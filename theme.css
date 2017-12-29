@@ -322,11 +322,17 @@ text colors:
 		background-color: #787878;
 	}
 
-	/* Change the text color of PM previews when you click the mail button on the top bar to be more readable */ 
-	.nav_bar .nav-bar-list > li > ul.drop-down-private-messages, .nav_bar .nav-bar-list > li .nav-bar-drop-down.drop-down-private-messages {
+	/* Change the text color of PM previews when you click the mail button on the top bar to be more readable */
+	.nav_bar .nav-bar-list > li > ul.drop-down-private-messages,
+	.nav_bar .nav-bar-list > li .nav-bar-drop-down.drop-down-private-messages {
 		color: #cac8c4;
 	}
 
+	/* Change the background and text color of the preview box for messages */
+	.drop-down-pop-up-container .drop-down-pop-up {
+	background-color: #333;
+	color: #cac8c4;
+	}
 /**** End Global Page Changes ****/
 
 /**** Begin Front Page Changes ****/
@@ -857,6 +863,11 @@ text colors:
 
 /**** Begin New Story Page Changes (the page when you click a story link. Has its description, chapters, etc) */
 
+	/* Remove the white border for the top toolbar on the story page */
+	.story_container .story-top-toolbar {
+		border-bottom: none;
+	}
+
 	/* Remove the text shadow from the ratings box and reset the text color */
 	.story_container .story-top-toolbar .right {
 		background: #484848;
@@ -946,7 +957,8 @@ text colors:
 	/* Remove the text shadow from the bookshelf buttons */
 	.story-top-toolbar .bookshelves li {
 		color: #cac8c4;
-		text-shadow: 0px 0px rgba(255, 255, 255, 0.5);
+		text-shadow: none;
+		border: 1px solid #000;
 	}
 
 	/* Set the color of the unselected bookshelf buttons to be more visible */
