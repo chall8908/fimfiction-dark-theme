@@ -1,2216 +1,1632 @@
-/* TODO:
-  1) Most things that have some kind of hover effect. I can't seem to find which
-     hovering code is giving the text / icons the color to change them.
-     (Specifically, the icons for the next/previous/chapter buttons and the
-     comment / page control buttons)
+/* 
+Here's a list of the most used colors in this theme for reference
+background colors:
+#333333 - used as the primary background for content
+#161616 - The background of the website, pretty dark to provide contrast
+		for the content
+#000000 - Sometimes you just need actual black
+#737578 - grayish blue background color (used for quoted user comments)
+#333333 (A29E96 old) - background for the bar at the top when viewing a story chapter or user page
+#484848 (CBC9C4 old) - background of the smaller info box inside the above bar
+#36393E - darker greyish blue background color (used for author's notes)
+#7C7C7C - dark grey background for the selected story feature box
+#B1B1B1 - ligher grey background for the feature box
+#484848 - very dark grey used as the background for the small story infocards (views, words, etc)
+#787878 - dark grey background for tags/filters
+#ADADAD - light grey background for forum and group topics
+#d7ce7d - Dark yellow for some informational bars
 
-
-  Here's a list of the most used colors in this theme for reference
-    background colors:
-      #333333 - used as the primary background for content
-      #161616 - The background of the website, pretty dark to provide contrast
-                for the content
-      #000000 - Sometimes you just need actual black
-      #737578 - grayish blue background color (used for quoted user comments)
-      #A29E96 - background for the bar at the top when viewing a story chapter or user page
-      #CBC9C4 - background of the smaller info box inside the above bar
-      #36393E - darker greyish blue background color (used for author's notes)
-      #7C7C7C - dark grey background for the selected story feature box
-      #B1B1B1 - ligher grey background for the feature box
-      #484848 - very dark grey used as the background for the small story infocards (views, words, etc)
-      #787878 - dark grey background for tags/filters
-      #ADADAD - light grey background for forum and group topics
-
-  text colors:
-    #cac8c4 - Light grey and the main font color, used liberally unless it's too
-              difficult to see.
-    #FFFFFF - because sometimes the only thing that shows up well is white text.
-              Used sparingly in order to reduce eye strain.
-    #000000 - black text works well with the #737578 background color
-    #3aa019 - dark green link color, shows up well for the most part. Might need
-              text shadow to bring it to full visibility.
-    #5aaC19 - light green link color on hover
-    #323338 - The color of the footer bar on FIMfic, used for the bookshelf story
-              text/link color.
-    #952525 - dark red, also used as a background color in some spots like
-              indicating your current chapter
+text colors:
+#cac8c4 - Light grey and the main font color, used liberally unless it's too
+	  difficult to see.
+#adadad - Slightly darker grey, used as the text color for the story card info bar
+#FFFFFF - because sometimes the only thing that shows up well is white text.
+	  Used sparingly in order to reduce eye strain.
+#000000 - black text works well with the #737578 background color
+#3aa019 - dark green link color, shows up well for the most part. Might need
+	  text shadow to bring it to full visibility.
+#5aaC19 - light green link color on hover
+#323338 - The color of the footer bar on FIMfic, used for the bookshelf story
+	  text/link color.
+#952525 - dark red, also used as a background color in some spots like
+	  indicating your current chapter
+#777777 - dark grey text, used for sub-text 
 */
 
-/**** FIMFic 4.0 Fixes ****/
-  /* Updates and fixes to get the theme working for the 4.0 update of FIMFic on 6/5/2017. 
-   * Changes are kept separate  to help troubleshoot future updates to the site as the new FIMFic update continues to be worked on by their devs */   
-  
-  /**** Begin Blog Posts, Front Page, and Misc changes ****/
-  /* Change blog post text to be readable */
-  .blog-post-content-box .blog_post_content {
-	color: #cac8c4;
-}
-  
-  /* Change blog post information bar (author name, views, report link) and story card info bar on front page */
-  .blog-post-content-box .information_box {
-   color: #a4a4a4;
-   background: #484848;
-}
-  /* Change the other front page story card info bars (new story / latest update ones) to match the previous change */ 
-  .story-card .story-card__info, .story-card-reverse .story-card__info {
-   color: #a4a4a4;
-   background: #484848;
-}
- 
-  /* Fixes feature box story titles being invisible with the new update */ 
-  .front_page .featured_box .right .title a {
-	color: #cac8c4;
-}
- 
-  /* Change the user card numbers to be readable */
-  .user-card .user-links a .number {
-	color: #FFF;
-}
- 
-  /* Change user comment image container boxes */
-  .collapsed-image-container {
-	background-color: #747579;
-}
-  
-  /* comment / post toolbar changes */
-  .add_comment .format-toolbar {
-background: #727477;
-}
-  
-  /* change the color of the new comment quote/user quote link text found in user comments */
-  .comment .comment_quote_link {
-	font-weight: bold;
-	color: #3aa019;
-}
+/**** FIMFic 4.0-4.1 Fixes ****/
+/* A recode of the CSS to eliminate a lot of old code */
+/* Designed to work with the 4.0 update of FIMFic on 6/5/2017 and the more recent "4.1" CSS update (12/19/2017). */
+/* Changes are kept separate  to help troubleshoot future updates to the site as the new FIMFic update continues to be worked on by their devs */
 
-  /* change the background of a quoted user comment box to fit with the other quote box color */
-  .comment.inline-quote .data {
-background: #36393E !important;
-}
-  
-  /* change the rating bar and quote text of a quoted user comment box to fit with the other quote box color */ 
-  .comment.inline-quote .data div {
-background: #36393E !important;
-}
-  
-  /* change the number of likes on a comment color to be a bit more visible green */ 
-  .comment .comment_information .comment-like .like-text {
-	color: #5aaC19;
-}
+/**** Begin Global Site Changes ****/
 
-  /* Change the background color of user comment block quotes */ 
-  .bbcode blockquote, .article blockquote {
-	background: #adadad;
-}
+	/* Global Changes to the borders of elements */
+	.content_box,
+	.user-cp-content-box,
+	.bookshelf-card,
+	.user-card,
+	.list_boxes .groups ul li a,
+	.api-content-box,
+	.bookshelf-sidebar-list li.selected,
+	.bookshelf-sidebar-list .bookshelf-icon,
+	div.search_results_count,
+	.comment .data,
+	.comment .avatar,
+	.feed > li,
+	.feed > li .avatar,
+	.front_page .featured_box,
+	.group_list .icon,
+	.thread_list table td .avatar,
+	.thread_list table td .group-icon,
+	.member_list table td img.avatar,
+	.group-card,
+	.private-message-list .avatar,
+	.sidebar-box,
+	.sidebar-blog-post-list > li,
+	.statistics .graph,
+	.story_content_box,
+	.story_container img.story_avatar,
+	.story-card,
+	.thumbnail-story-list li .item,
+	.tag-page .related-characters li a,
+	.tag-header,
+	.user_cp .tabs img,
+	.user_cp .tabs .tab-collection,
+	div.user_cp .message_table img.avatar,
+	.nav_bar .nav-bar-list > li > ul.drop-down-private-messages li .avatar,
+	.nav_bar .nav-bar-list > li .nav-bar-drop-down.drop-down-private-messages li .avatar,
+	.story-page-header .image-container img,
+	.user-page-header .avatar-container img,
+	.page_list,
+	.page_list_info,
+	.adsbygoogle,
+	.hfksjdhfksjd,
+	.pw-ad-box table,
+	.private_messages .previous_message .avatar {
+		border: 1px solid #484848;
+		border-radius: 4px;
+	}
 
-  /* Change the color of the 'Continue Reading' box story title link on the front page */ 
-.front_page .currently-reading-list .title {
-color: #cac8c4;
-}
+	/* Change the background color of the site */
+	body {
+		background-color: #161616;
+	}
 
-   /* change the color of the progress bar for the continue reading box to something a little less glaring */ 
-  .front_page .currently-reading-list li .read-progress {
-	background: #1f560d;
-}
-  
-  /* change the story info text color for the 'continue reading' box on the front page */
-  .list_boxes .list .info {
-	color: #cac8c4;
-}
-  
-  /* change the background of the info bar when you click on an image to see it bigger */ 
-  .lightbox .caption {
-	background: #333;
-}
+	/* Change the color of links on the site, also make them bold */
+	a {
+		color: #3aa019;
+		font-weight: bold;
+	}
 
-  /* fix like and dislike icons for comments to be visible again */ 
-  .comment .comment_information .comment-like span {
-	color: #cac8c4;
-}
-  
-  /* fix the browse button menu links to be visible again */ 
-  .nav_bar .nav-bar-list > li > ul.browse-pane ul li a, .nav_bar .nav-bar-list > li .nav-bar-drop-down.browse-pane ul li a {
-	color: #cac8c4;
-}
-  
-  /* change the color of the browse button menu link hover */
-  .nav_bar .nav-bar-list > li > ul.browse-pane ul li a:hover, .nav_bar .nav-bar-list > li .nav-bar-drop-down.browse-pane ul li a:hover {
-	color: #FFF;
-}
-  
-    /**** End Blog Posts, Front Page, and Misc changes ****/
-  
-  /**** Begin Bookshelf Page changes ****/
-    /* change the bookshelf title link text color in the 'My Bookshelves' sidebar when you're viewing a bookshelf. */
-  .list_boxes .bookshelves .bookshelf-name {
-	color: #cac8c4 !important;
-}
-  
-  /* change the selected bookshelf info card at the top of the sidebar when viewing a bookshelf */ 
-  .list_boxes .bookshelves li.selected
-  {
-    background-color: #333;
-  }
-  
-  /* change the bookshelf info card description text color when viewing a bookshelf */ 
-  .list_boxes .bookshelves .bookshelf-description {
-color: #cac8c4;
-}
-  /**** End Bookshelf Page Changes ****/
-  
-  /**** Emote menu changes ****/
- /* comment / post emote menu changes */ 
-  .format-toolbar .emoji-selector .emoji-selector__search {
-	background: #282828;
-}
-  /* Change the background of the Ponies emote menu section */ 
-  .format-toolbar .emoji-selector .emoji-selector__list > li.emoji-selector__header:first-child {
-		background: #282828;
-}
-  /*Change the rest of the backgrounds for emote menu sections */
-  .format-toolbar .emoji-selector .emoji-selector__list > li.emoji-selector__header {
-background: #282828;
-}
- 
-  /*Change the background of the non-selected 'quick jump section' buttons at the bottom of the emote menu */
-  .format-toolbar .emoji-selector .emoji-selector__tabs li {
-background: #282828;
-}
-  /**** End emote menu changes ****/ 
-  
-  /**** Begin New Story Page changes (the page when you click a story link. Has its description, chapters, etc) */
+	/* Change the color of links on the site, also make them bold when hovered */
+	a:hover {
+		color: #3aa019;
+		font-weight: bold;
+	}
 
-  /* change the color of the progres bar for a story/chaper when viewing its story page */
-  .story_container .chapters > li .read-progress {
-	background: #1f560d;
-}
-
-  /* change the chapter footer bar back to the way it was */ 
-  .story_container .chapters-footer {
-	background-color: #3f3f3f;
-	color: #cac8c4;
-}
-  /* Change the chapter footer published date box */ 
-  .story_container .approved-date {
-	background: #95979f;
-	color: #000;
-	text-shadow: none;
-}
-  
-/* Change the story page chapter list background and color */   
-.story_container ul.chapters li {
-  background: #282828 !important;
-  border-bottom-color: #FFF !important;
-}
-  
-  /* Changes the top border between the chapters in the chapter list to be a little more visible */ 
-.story_container .chapters li {
-	border-top: 1px solid #333;
-}
-
- /* Remove the text shadow from the ratings box and reset the text color */
-.story_container .story-top-toolbar .right {
-  background: #3f3f3f;
-  border-color: #444;
-	color: #aeb1b6;
-}
-  
-  /* Set the background color for the bookshelf buttons in the top left of a story page */ 
- .story-top-toolbar .bookshelves li.unselected {
-	background: #3f3f3f !important;
-}
-  
-  /* Remove the text shadow from the bookshelf buttons */
-.story-top-toolbar .bookshelves li {
-  color: #cac8c4;
-	text-shadow: 0px 0px rgba(255,255,255,0.5);
-}
-  
-  /* Set the color of the unselected bookshelf buttons to be more visible */
-  .story-top-toolbar .bookshelves li span::before {
-	color: #cac8c4;
-	-webkit-transition: color .2s;
-	transition: color .2s;
-}
-
-  /* change the spoiler tag background back to the way it was for visibility */
-  .bbcode .spoiler, .article .spoiler {
-	background-color: #000;
-	color: transparent;
-	text-shadow: none;
-}
-  /**** End story page changes ****/ 
-  
-  /**** Begin Chapter Changes ****/ 
-  /* change the chapter block quotes to have a darker background and text */ 
-  #chapter-body .bbcode blockquote:not(.plaque) {
-	background: #333;
-	color: #cac8c4;
-	border-left: 0px solid currentColor;
-}
-  
-  /* Make the box shadow on box quotes not so large and bright */
-  .bbcode blockquote, .article blockquote {
-	border: 1px solid rgba(0,0,0,0.2);
-	box-shadow: 0px 0px 0px 1px #cac8c4 inset;
-}
-  /* change the background of the toolbar right below the bookshelf buttons and rating box when reading a chapter */
-  .toolbar {
-	background: #5e636e;
-}
-  
-  /* Bring back the nice dark gradient for the formatting button and other buttons on this toolbar */ 
-.toolbar .cell > ul > li > a {
-background: #43474f;
-background: -moz-linear-gradient(top, #43474f 0%, #32353b 100%);
-background: -webkit-linear-gradient(top, #43474f 0%,#32353b 100%);
-background: linear-gradient(to bottom, #43474f 0%,#32353b 100%);
-}
-  
-  /* Change the hover background and text color for these buttons to be more in line with the theme */ 
-.toolbar .cell > ul > li > a:hover {
-	color: #000;
-  background-color: #cac8c4;
-}
-  
-  /**** End Chapter Changes ****/
-  
-  /**** Begin Groups Page Changes ****/ 
-  /* change the top part of the new group cards background and text color */ 
- .group-card-list > li .group-card .group-card-content {
-	background: #333;
-   Color:  #cac8c4;
-}
-  
-  /* change the group name link text color */ 
-  .group-card .group-name a {
-	color: #cac8c4;
-}
-  
-  /* change the group card background (changes the bottom buttons of the group cards) */
-  .group-card  {
-    background-color: #484848;
-}
-  /* change the text color of the numbers on the group cards */
-  .group-card .bottom-links a .number {
-	color: #cac8c4;
-}
-  
-  /* Change the title color of a group's actual page */ 
-  .group-header .group-header-base .group_name {
-	color: #cac8c4;
-}
-  
-  /* Change the background color of the buttons for a group's actual page (Stories, members, forums) */
-  .group-header .menu .buttons {
-	background-color: #656d75;
-}
-  
-  /* change the hover color for the group's buttons to not be so blinding */ 
-  .group-header .menu .buttons li a:hover {
-		color: #000;
-  background-color: #cac8c4;
-}
-  
-  /* change the background color of the new Folder, Admins, and Members sidebar boxes */ 
-   .folder_list table tr, .member_list table tr, .group_list table tr {
-	background-color: #333;
-   
-}
-  /* changes the even number lines background color of the new Folder, Admins, and Members sidebar boxes */ 
-  .folder_list table tr:nth-child(2n+1), .member_list table tr:nth-child(2n+1), .group_list table tr:nth-child(2n+1) {
-	background-color: #2b2a2a;
-}
-  
-  /* change the link text color for the Folder, Admins, and Members sidebar boxes. */
-   .folder_list table tbody td a, .member_list table tbody td a, .group_list table tbody td a{
-	color: #cac8c4;
-	font-weight: 600;
-}
-  
-  /* change the top bar of the group forums background */ 
-  div.thread_list table tr.header td {
-     background: #5e636e !important;
-}
-  /* change the group forum threads background */ 
-  div.thread_list table td:first-child {
-	background-color: #333 !important;
-	color: #cac8c4 !important;
-}
-  
-  /* change the group forum thread post count and last post boxes background */ 
-  div.thread_list table tr td {
-	background-color: #333 !important;
-		color: #cac8c4 !important;
-}
-
-/* change the background color of the group story folders */
-.folder_list table td .folder {
-	background-color: #484848;
-}
-
-/* change the background color of the group story folders when you hover over them */
-.folder_list table td .folder:hover {
-	background-color: #161616;
-}
-  /**** End Groups Page Changes ****/
-  
-  /**** Begin PM Page Changes ****/ 
-  /* change the background color of the PM dropdown when you hover over the PM icon in the top left of the site */
-  .nav_bar .nav-bar-list > li > ul.drop-down-private-messages li, .nav_bar .nav-bar-list > li .nav-bar-drop-down.drop-down-private-messages li {
-background-color: #333;
-}
-  /* change the PM message checkbox area background */
-  .private-message-list tbody td.checkbox {
-	background-color: #333 !important;
-}
-  /* change the PM message sender info area background */
-  .private-message-list tbody td.sender {
-	background-color: #333 !important;
-}
-  
-  /* change the PM page message preview box */ 
-  .private-message-list tbody td.pm-content {
-	background-color: #333 !important;
-}
-  
-  /* change the color of the sender's name link text */
-  .private-message-list tbody td.sender a {
-	color: #3aa019; 
-}
-  
-  /* change the color of the PM title link text */
-  .private-message-list .title {
-	color: #cac8c4;
-}
-  
-  /* fix the PM message box top toolbar background */ 
-  .bbcode-editor .format-toolbar {
-	background: #6f7175;
-}
-  /**** End PM Page Changes ****/ 
-  
-  /**** Begin FAQ page changes ****/
-  /* change the color of the FAQ headings to be readable again */ 
-  .faq main h1, .tags_information main h1, .rules main h1 {
-color: #cac8c4;
-}
-  
-  /* change the FAQ link text color */
-  .faq .content_box, .faq .user-cp-content-box, .tags_information .content_box, .tags_information .user-cp-content-box, .rules .content_box, .rules .user-cp-content-box {
-	color: #cac8c4;
-}
-  
-  /* change the FAQ link text color hover */
-  .faq .answers > li .question:hover {
-	color: #3aa019;
-}
-  
-  .faq nav, .tags_information nav, .rules nav {
-
-    color: #cac8c4;
-	text-shadow: 0px 0px rgba(255,255,255,0.3);
-}
-  
-  /* change the FAQ heading text and symbol on the FAQ page 'sidebar' */
-  .faq nav h1, .tags_information nav h1, .rules nav h1 {
-	color: #cac8c4;
-}
-  
-  /* change the Heading 2 text  on the FAQ page 'sidebar' */
-  .faq nav h2, .tags_information nav h2, .rules nav h2 {
-	color: #cac8c4;
-}
-  
-  /* change the search symbol color on the FAQ page */ 
-  .fa-search::before {
-	color: #cac8c4 !important;
-}
-  
-  /**** End FAQ page changes ****/
-  
-  /**** Begin Rules page changes ****/
-  /* change the heading 2 text color to be readable */
-  .faq main h2, .tags_information main h2, .rules main h2 {
-	color: #cac8c4;
-}
-   /**** End Rules page changes ****/
-  
-   /**** Begin BBCode Help page changes ****/
-  /* change the heading 2 text color to be readable */ 
-  .bbcode > h2, .bbcode > h3, .article > h2, .article > h3 {
-color: #cac8c4;
-}
-  
-  /* change the code boxes on the BBcode pages to be less bright */ 
-  .bbcode pre code, .article pre code {
-	background: #adadad;
-	color: #000;
-}
-  
-  /* change the tag code boxes on the BBcode pages to be less bright */ 
-  .bbcode code, .article code {
-	background: #adadad;
-	color: #000;
-}
-  
-    /**** End BBCode Help page changes ****/
-  
-  /**** Begin Tag Information page changes ****/
- /* change the tag symbol color to be visible */ 
-  .fa-tags::before {
-color: #cac8c4 !important;
-}
-    /**** End Tag Information page changes ****/
-  
-    /**** Begin Writing Guide page changes ****/
-  /* change the link text color in the table of contents to be readable */ 
-  .writing_guide .contents li.h1 a {
-	color: #cac8c4;
-}
-  /**** End Writing Guide page changes ****/
-  
-  /**** Begin News Feed changes ****/
-  /* change the background color of the news feed boxes */ 
-  .feed > li {
-		background: #333333;
-color: #cac8c4;
-}
-  
-  /* change the news feed title link text color */ 
-  .feed > li .feed_header a.title {
-	color: #cac8c4;
-}
-  
-  /* change the group news feed link color text */
-  .feed > li .feed_body ul.group_stories a {
-	color: #3aa019;
-}
-  
-  /* change the group news feed regular text color */
-  .feed > li .feed_body ul.group_stories ul li {
-	color: #cac8c4;
-}
-  
-  /* change blog post feed text color */ 
-  .feed > li .feed_body {
+	/* Change drop down menu background and text color */
+	.button-group .drop-down,
+	.button-group-vertical .drop-down,
+	.drop-down-button .drop-down {
+		background: #3a3a3a;
 		color: #cac8c4;
-}
-  
-  /* change the blog post info bar background and text color */
-  .feed > li .comment_count {
-	background-color: #484848;
-	color: #cac8c4;
-}
-  /* change the blog post user link in the info bar text color */
-  .feed > li .comment_count a {
-	color: #3aa019; 
-}
-  
-  /* change the read more button on the feed page to a more visible gradient */ 
-  .styled_button.styled_button_dark_grey {
-background: #43474f;
-background: -moz-linear-gradient(top, #43474f 0%, #32353b 100%);
-background: -webkit-linear-gradient(top, #43474f 0%,#32353b 100%);
-background: linear-gradient(to bottom, #43474f 0%,#32353b 100%);
-}
-
-  /* change the background of the buttons at the top of the news feed page to a less bright color */ 
-.toggleable-radio {
-	background: #cac8c4;
-}
-  /**** End News Feed Changes ****/
-
- /**** Begin User Page Changes ****/
-  /* change the color of the following button gradient if you're following a user to be more noticable */
-  button.styled_button.styled_button_dark_grey.button-follow.button_toggle.button_user_watch[data-watch="true"] {
-    background: #81b945;
-    background: -moz-linear-gradient(top, #81b945 0%, #6fa03c 100%);
-    background: -webkit-linear-gradient(top, #81b945 0%,#6fa03c 100%);
-    background: linear-gradient(to bottom, #81b945 0%,#6fa03c 100%);
-    text-shadow: 0px 0px rgba(255,255,255,0.3)
-}
-  /**** End User Page changes ****/
-  
-   /**** End FIMFic 4.0 Fixes ****/
-   /**** ----------------------------------------------------------- ****/
-  
-  
-   /**** Old FIMfic code that still mostly works ****/
-  /**** Global FIMfic Changes ****/
-/* Body color changed to better match Dark Reading Mode on FIMFic. Also fits well
- * with the Firefox FT Deep Dark theme
- */
-body {
-  background-image: none;
-  background-color: #161616;
-}
-
-/* Firefox code to change text selection / highlight color  */
-::-moz-selection {
-  color: #cac8c4;
-  background: #0b67d8;
-}
-
-/* Code to change text selection / highlight color  */
-::selection {
-  color: #cac8c4;
-  background: #0b67d8;
-}
-
-/* Dimmer color change */
-/* applies a fade effect to the background, seen in the background when you go to
- * add a story to a bookshelf
- */
-.dimmer {
-  background-color: rgba(174, 173, 173, 0.7);
-}
-
-/* Blanket changes to try to fix the white boxes (Featured box, story boxes, etc)
- * box being white and resisting normal changes.
- * Basically, anything that has white as a background color is gonna get changed here
- * Surprisingly nuking every tag under the sun with those changes seems to work out pretty well
- * Someone can go through and try to sort out what does what and add more specific
- * code blocks to fix colors, but I'm not gonna touch it.
- * It works and doesn't seem to hurt anything
- */
-.bookshelf-card,
-.user-card,
-.api-content-box,
-.user_blog_post .right .bookshelves li.selected,
-.user_blog_post .right .bookshelves .bookshelf-icon,
-div.search_results_count,
-.comment .author .avatar,
-.comment .data,
-div.feed div.feed_item,
-div.feed div.feed_item img.avatar,
-div.front_page div.featured_box,
-div.thread_list table td img.avatar,
-.statistics .graph,
-.story_container img.story_avatar,
-.story-list .right,
-.story-list .story-image img,
-.thumbnail-story-list li .item,
-table.properties div.characters label div,
-.tag-page .tags li a,
-.tag-header,
-.tag-header .image img,
-.nav_bar .nav-bar-list>li>ul.drop-down-private-messages li .avatar,
-.nav_bar .nav-bar-list>li .nav-bar-drop-down.drop-down-private-messages li .avatar,
-.story-page-header .image-container img,
-.user-page-header .avatar-container img,
-.page_list,
-.page_list_info,
-.content_box,
-div.user_cp .tabs img,
-div.user_cp .tabs .tab-collection,
-.user-cp-content-box,
-div.user_cp .message_table img.avatar,
-div.search_pane div.search_options label,
-div.ad_container ins,
-.list_boxes .groups ul li a,
-.list_boxes .blog_posts ul li,
-.story-card,
-.story-card-reverse,
-div.private_messages div.previous_message img.avatar,
-div.front_page div.featured_box .right .featured_story {
-  background-image: none;
-  background-color: #333333;
-  color: #cac8c4;
-}
-
-.bookshelf-card,
-.user-card,
-.api-content-box,
-.user_blog_post .right .bookshelves li.selected,
-.user_blog_post .right .bookshelves .bookshelf-icon,
-div.search_results_count,
-.comment .author .avatar,
-.comment .data,
-div.feed div.feed_item,
-div.feed div.feed_item img.avatar,
-div.front_page div.featured_box,
-div.thread_list table td img.avatar,
-.statistics .graph,
-.story_content_box,
-.story_container img.story_avatar,
-.story-list .right,
-.story-list .story-image img,
-.thumbnail-story-list li .item,
-table.properties div.characters label div,
-.tag-page .tags li a,
-.tag-header,
-.tag-header .image img,
-.nav_bar .nav-bar-list>li>ul.drop-down-private-messages li .avatar,
-.nav_bar .nav-bar-list>li .nav-bar-drop-down.drop-down-private-messages li .avatar,
-.story-page-header .image-container img,
-.user-page-header .avatar-container img,
-.page_list,
-.page_list_info,
-.content_box,
-div.user_cp .tabs img,
-div.user_cp .tabs .tab-collection,
-.user-cp-content-box,
-div.user_cp .message_table img.avatar,
-div.search_pane div.search_options label,
-div.ad_container ins,
-.list_boxes .groups ul li a,
-.list_boxes .blog_posts ul li,
-.story-card,
-.story-card-reverse,
-div.private_messages div.previous_message img.avatar,
-div.private_messages div.previous_message div.message_content {
-  border-color: rgba(255,255,255,0.1);
-}
-
-/* Link color change to be a different shade of green for readability */
-a {
-  font-weight: bold;
-  color: #3aa019;
-}
-
-/* Change the background of the link box when a user posts a link in a comment */
-/* This is also how you can change an inline style if need be. The !important is
- * required to overwrite the style
- */
-.comment_data div {
-  background-color: #737578 !important;
-}
-
-/* Change the color of the link in the box when a user posts a link in a comment */
-a.user_image_link {
-  color: #FFF;
-}
-
-/* Change system / site wide message box background color to something less bright */
-.message,
-.error-message,
-.success-message {
-  background-color: #d9d2c8;
-}
-
-/* Change "top bar" gradients to fit better with dark theme */
-.topbar-shadow div.light-gradient {
-  top: 0px;
-  background: transparent;
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(80px, #555));
-  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, #555 80px);
-  background: linear-gradient(to right, rgba(255,255,255,0) 0%, #555 80px);
-}
-
-.topbar-shadow div.light-gradient:before {
-  background: #555;
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #555), color-stop(80px, rgba(255,255,255,0)));
-  background: -webkit-linear-gradient(left, #555 0%, rgba(255,255,255,0) 80px);
-  background: linear-gradient(to right, #555 0%, rgba(255,255,255,0) 80px);
-}
-
-/* Change "sidebar" gradients to fit better with dark theme */
-.sidebar-shadow div.light-gradient {
-  left: 0px;
-  background: transparent;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(80px, #555));
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, #555 80px);
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #555 80px);
-}
-
-.sidebar-shadow div.light-gradient:before {
-  background: #555;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #555), color-stop(80px, rgba(255,255,255,0)));
-  background: -webkit-linear-gradient(top, #555 0%, rgba(255,255,255,0) 80px);
-  background: linear-gradient(to bottom, #555 0%, rgba(255,255,255,0) 80px);
-}
-
-/* Change the selected link color to better match the theme */
-/* This is seen when reading a story chapter, or vising a user's page. The three
- * top 'buttons' of the right column: 'Also Liked, Similar, and Author'. Choosing
- * any of those makes that button change to this color
- */
-.list_boxes h1.header-tabs a.selected {
-  background: #6a110c none repeat scroll 0% 0%;
-}
-
-/* Global change for "white"/grey buttons text hover color */
-/* Not sure about the colors in this change, but it needs something to tell the user they're hoving over a button */
-a.styled_button.styled_button_white:HOVER {
-  color: #000;
-  background-color: #b1b1b1;
-}
-
-/* User Top Menu Changes */
-.user_toolbar > ul > li ul {
-  color: #cac8c4;
-  background: #3a3a3a none repeat scroll 0% 0% padding-box;
-}
-
-/* change search and other input field text color */
-div.search_options input,
-div.search_options select {
-  color: #cac8c4;
-}
-
-/* Fix search and other input field text colors when they're selected so they're
- * readable
- */
-label.focus input {
-  color: #000 !important;
-}
-
-/* End User Top Menu Changes */
-/* **************Section Separator*************************** */
-/* Story Card Changes */
-/* Changes the story card info bar on stories (words, views, votes, etc)
- * background and text color
- */
-.story-card .info,
-.story-card-reverse .info {
-  background: rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.5);
-}
-
-/* Match background color of the page on the corner card flip */
-.story-card .card-flip .tab-cover,
-.story-card-reverse .card-flip .tab-cover {
-  border-color: transparent #161616 transparent transparent;
-}
-
-/* End Story Card Changes */
-/* **************Section Separator*************************** */
-/* Browse Button Drop Down Changes */
-/* Change background color of the drop down box */
-.nav_bar .nav-bar-list > li > ul.browse-pane,
-.nav_bar .nav-bar-list > li .nav-bar-drop-down.browse-pane {
-  background: #3a3a3a repeat scroll 0% 0% padding-box;
-}
-
-/* Change the text color */
-.nav_bar .nav-bar-list > li > ul.browse-pane ul li,
-.nav_bar .nav-bar-list > li .nav-bar-drop-down.browse-pane ul li {
-  color: #cac8c4;
-}
-
-/* Change the header color */
-.nav_bar .nav-bar-list > li > ul.browse-pane .header,
-.nav_bar .nav-bar-list > li .nav-bar-drop-down.browse-pane .header {
-  color: #000;
-  background-color: #737578;
-}
-
-/* End Browse Button Drop Down Changes */
-/* **************Section Separator*************************** */
-/* Mail Button Drop Down Changes */
-/* Change the header bar */
-.nav_bar .nav-bar-list .drop-down-footer,
-.nav_bar .nav-bar-list .drop-down-header {
-  background: #737578 none repeat scroll 0% 0%;
-}
-
-/* Change message link color */
-.nav_bar .nav-bar-list > li > ul.drop-down-private-messages li a,
-.nav_bar .nav-bar-list > li .nav-bar-drop-down.drop-down-private-messages li a {
-  color: #3aa019;
-}
-
-/* Change message background color and text color */
-.nav_bar .nav-bar-list > li > ul.drop-down-private-messages,
-.nav_bar .nav-bar-list > li .nav-bar-drop-down.drop-down-private-messages {
-  background: #3a3a3a;
-  color: #cac8c4;
-}
-
-/* Change new message colors */
-.nav_bar .nav-bar-list>li .nav-bar-drop-down.drop-down-private-messages li.new {
-  background: #595959;
-  color: #cac8c4;
-}
-.nav_bar .nav-bar-list>li>ul.drop-down-private-messages li.new,
-.nav_bar .nav-bar-list>li .nav-bar-drop-down.drop-down-private-messages li.new .message-content {
-  color: #cac8c4;
-}
-
-/* End Mail Button Drop Down Changes */
-/* Gradient fade effect color changes */
-/* This effect is seen at the bottom of the Popular Stories column on the front page */
-div.front_page .popular-stories-container::after {
-  background: transparent linear-gradient(to bottom, rgba(238, 233, 226, 0) 50%, #161616 100%) repeat scroll 0% 0%;
-}
-
-/* Begin Notification button changes */
-/* Change the background and text color of the notifications in the drop down window */
-.nav_bar .nav-bar-list > li > ul.drop-down-notifications li,
-.nav_bar .nav-bar-list > li .nav-bar-drop-down.drop-down-notifications li {
-  background: #333;
-  color: #cac8c4;
-}
-
-/* Notification drop down box background color change */
-.nav_bar .nav-bar-list > li > ul, .nav_bar .nav-bar-list > li .nav-bar-drop-down
-                                   {
-	                                   background: #737578 none repeat scroll 0% 0% padding-box;
-                                   }
-
-/* End Notification button changes */
-
-/* Global green button hover text color change */
-/* Makes these buttons match the rest of the site when hovered over, while keeping the link  hover color change for regular text */
-a.styled_button:HOVER {
-	color: #FFF;
-}
-
-/* Drop down menu text color change */
-.drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer, .drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer-right {
-	color: #cac8c4;
-}
-
-/* Error message pop-up box body text color change */
-.drop-down-pop-up-container .drop-down-pop-up {
-	color: #cac8c4;
-}
-/* End Global FIMfic Changes */
-/* **************Section Separator*************************** */
-/* Begin Specific Page Changes */
-/* Begin News Page changes */
-/* Change the background and text color of the links in the side bar */
-.site-post-tags.generic_content_box_content a {
-	color: #cac8c4;
-	background: #333 none repeat scroll 0% 0%;
-}
-
-/* Change the text color of the links in the side bar on hover */
-.site-post-tags.generic_content_box_content a:HOVER {
-	color: #000;
-}
-/* End News Page Changes */
-/* **************Section Separator*************************** */
-/* Begin Login Page Changes */
-/* Login page 'register a new account' text changes */
-.register-box {
-	color: #cac8c4;
-}
-/* End Login Page Changes */
-/* **************Section Separator*************************** */
-/* Begin Notification Page Changes */
-/* Menu bar background color change */
-div.content div.notifications div.type_selector
-{
-	background-color: #737578;
-}
-/* End Notification Page Changes */
-/* **************Section Separator*************************** */
-/* Begin Mail page changes */
-/* Change background of mail messages */
-div.user_cp .message_table tr, div.user_cp .message_table tr.unread {
-  background: #333;
-  color: #cac8c4;
-}
-
-div.user_cp .message_table tr.unread td:last-child {
-  position: relative;
-}
-
-div.user_cp .message_table tr.unread td:last-child:before {
-  content: 'Unread';
-
-  position: absolute;
-  top: 20px;
-  left: -45px;
-
-  border: 2px solid #6b8d13;
-  border-left: 0px;
-  border-right: 0px;
-  border-radius: 0px 40px 40px 0px/0px 20px 20px 0px;
-
-  padding: 2px 15px 2px 10px;
-
-  background-color: #6b8d13;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, right top, from(#8dba19), to(#6b8d13));
-  background-image: -moz-linear-gradient(left, #8dba19, #6b8d13);
-  background-image: -ms-linear-gradient(left, #8dba19, #6b8d13);
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #8dba19), color-stop(100%, #6b8d13));
-  background-image: -webkit-linear-gradient(left, #8dba19, #6b8d13);
-  background-image: -o-linear-gradient(left, #8dba19, #6b8d13);
-  background-image: linear-gradient(left, #8dba19, #6b8d13);
-  color: #eee;
-
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-/* Change the link color of a mail message subject */
-div.user_cp .message_table tr.unread a.title {
-  color: #fff;
-}
-
-div.user_cp .message_table a.title {
-  color: #eee;
-}
-
-/* Change author of message link color */
-div.user_cp .message_table tr td.sender a {
-  color: #3aa019;
-}
-
-/* Change the 'sent date' text under author name color */
-div.user_cp .message_table span.date {
-  color: #cac8c4;
-}
-
-/* Change the mail toolbar background */
-div.user-cp-page-tabs > div.left {
-  background: #333;
-}
-
-/* Another part of the toolbar background to change color */
-div.user-cp-page-tabs {
-  background-color: #333;
-}
-
-/* Change toolbar button background and text color */
-div.user-cp-page-tabs ul li, div.user-cp-page-tabs ul li:first-child {
-  border-color: #444;
-}
-
-div.user-cp-page-tabs ul li a {
-  color: #FFF;
-  background: #737578;
-  text-shadow: 1px 1px rgba(0,0,0,0.4);
-}
-
-/* Change background and text color of selected toolbar button */
-div.user-cp-page-tabs ul li a.pm_tab_selected {
-  background-color: #952525;
-  color: #FFF;
-}
-
-/* Change search box background color */
-div.user-cp-page-tabs > div.right {
-  background: #737578 none repeat scroll 0% 0%;
-}
-
-/* Change search icon color */
-.fa-search::before {
-  color: #000;
-}
-
-/* Change the background of each message box color */
-div.private_messages div.previous_message {
-  background-color: #161616;
-  border-bottom-color: transparent;
-}
-
-/* Change message background color */
-div.private_messages div.previous_message div.message_content {
-  background-color: #333;
-  color: #cac8c4;
-}
-
-div.private_messages div.previous_message div.message_content div.arrow {
-  border-right-color: rgba(255,255,255,0.4);
-}
-
-div.private_messages div.previous_message div.message_content div.arrow:before {
-  border-right-color: #333;
-}
-/* End Mail Page Changes */
-/* **************Section Separator*************************** */
-/**** Begin Feed Page Changes ****/
-
-/* Begin User Posted New Story Header Bar Changes */
-/* This changes a small bar of color before the < arrow and the actual text */
-  div.feed div.feed_item.feed_new_story div.feed_header {
-	border-color: #578CB5;
-}
-  /* This changes the background color of the bar behind the text */
-  div.feed div.feed_item.feed_new_story div.feed_header h1 {
-	background-color: #578CB5;
-}
-  /* This changes the arrow color */
-  div.feed div.feed_item.feed_new_story div.arrow_colour {
-	border-left-color: #578CB5 !important;
-	border-right-color: #578CB5 !important;
-}
-/* End User Posted New Story Header Bar Changes */
-
-/* Change the Feed arrows to match the background */
-.feed_column:nth-child(1) div.feed_item div.arrow {
-  border-right: 11px solid rgba(255,255,255,0.4);
-}
-
-.feed_column:nth-child(1) div.feed_item div.arrow div.inner_arrow {
-  border-right: 12px solid #333333;
-}
-
-/* Change post footer background and text color */
-div.feed div.feed_item div.comment_count {
-  background-color: rgba(255,255,255,0.1);
-  color: #cac8c4;
-  color: rgba(255,255,255,0.7);
-}
-
-div.feed div.feed_item div.comment_count a {
-  color: #cac8c4;
-  color: rgba(255,255,255,0.7);
-}
-
-/* Hide comment count when it's empty */
-.comment_count:empty {
-  display: none;
-}
-
-/* Change story chapter post header color */
-div.feed div.feed_item.feed_new_chapter div.feed_header h1 {
-  background-color: #95b557;
-}
-
-/* Change feed links to blank and make them bold like the author link */
-div.feed div.feed_item.feed_new_chapter div.feed_header h1 a {
-  color: #000;
-  font-weight: bold;
-}
-
-/* Change story chapter post text color */
-div.feed_item ul.group_stories li {
-  color: #cac8c4;
-}
-
-/* Change Blog Post Header Color */
-div.feed div.feed_item h1 {
-  background-color: #aaaaaa;
-}
-
-/* Change Blog Post Heading Link Color */
-div.feed div.feed_item div.feed_body a.title {
-  color: #18adee;
-}
-
-/* Change Blog Post Text Color */
-div.feed div.feed_item div.feed_body {
-  color: #cac8c4;
-}
-
-/* Change Group Post Header Color */
-div.feed div.feed_item.feed_group_item div.feed_header h1 {
-  background-color: #cbc458;
-}
-
-/* Change Group Story Added Folder colors */
-div.feed_item a.group_folder {
-  background-color: #202020;
-  color: #ccc;
-}
-
-/* Change Site Blog Post Header Color */
-div.feed div.feed_item.feed_site_blog_post div.feed_header h1 {
-  background-color: #c07979;
-}
-
-/* End Feed Page Changes */
-/* **************Section Separator*************************** */
-/* Begin Front Page Changes */
-div.front_page div.featured_box .right .info {
-  background: rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.5);
-}
-
-/* Featured box list background color change */
-div.front_page div.featured_box .left ul li {
-	background-color: #b1b1b1;
-}
-
-/* Selected Featured Box list story background and text color change */
-div.front_page div.featured_box .left ul li.selected {
-	background: #7c7c7c none repeat scroll 0% 0%;
-  color: #cac8c4;
-}
-
-/* End Front Page Changes */
-/* **************Section Separator*************************** */
-/* Begin User Page Changes */
-/* Begin Edit User Page Changes */
-/* Change the background and text color of the top and bottom 'bars' of the user page module options box */
-/* Module options box background  */
-div.user_page_content_box {
-	background-color: #333333;
-}
-
-/* Top header bar background color and text change */
-div.content_box div.content_box_header {
-	color: #FFF;
-	background: #737578;
-}
-
-/* Bottom header bar background color change */
-/* Using :last-child lets you select the last div of the parent, which, in this case was a div wihtout a class or id */
-#user_page_editing_toolbar div:last-child {
-  background-color: #737578 !important;
-}
-/* End Edit User Page Changes */
-
-/* Begin user main page changes */
-/* Change user online color to be readable */
-.user-page-header .online {
-  color: #3aa019;
-}
-
-.story-page-header .mini-info-box, .user-page-header .mini-info-box {
-  color: rgba(0,0,0,0.8);
-  text-shadow: none;
-}
-
-/* Change user tabs to a different color matching the theme */
-.user-page-header .tabs li a {
-  background: #cbc9c4;
-  text-shadow: 1px 1px rgba(255, 255, 255, 0.4);
-  color: #242322;
-}
-
-.story-page-header >.inner h1, .user-page-header >.inner h1 {
-  color: #ccc;
-}
-
-/* Change user body content boxes to have readable text */
-.content_box h1 {
-  color: #FFF;
-}
-
-/* Change link color */
-.user_page .left_column .story_gallery .story_link {
-  color: #FFF;
-}
-
-/* Change author name text color */
-.content_box span.author {
-  color: #cac8c4;
-}
-
-/* Change description color */
-div.user_page ul.list li span.info {
-  color: #cac8c4;
-}
-
-/* Change user blog post information to be readable */
-div.information_box {
-  color: #FFF;
-}
-
-/* Change user content boxes to have a less bright background */
-div.user_page div.right_column div.custom_box_content {
-  background: #333;
-  color: #cac8c4;
-}
-
-/* Change Followers box background and text color */
-div.bio_followers {
-  background: #333;
-  color: #cac8c4;
-}
-
-  /* Change the link color for a username list (followers box) on a user's page */
-div.user_page div.bio_followers ul.names li a span.name {
-	color:#3aa019;
-}
-
-/* Changes the background and text color of sidebar content boxes if a user
- * decides they should go horizontal instead of vertical
- * an example of this would be anyone that has a Followers or Watchers box as
- * part of their main content instead of with the side bar
- */
-div.content_box.user_page_content_box h1 {
-  background: transparent linear-gradient(to bottom, #777471 0%, #6B6967 100%) repeat scroll 0% 0%;
-  color: #FFF;
-}
-
-/* Change user custom content box background and text color */
-div.user_page div.custom_box_content {
-  background: #333;
-  color: #cac8c4;
-}
-
-/* End User Main Page Changes */
-/* **************Section Separator*************************** */
-/* Begin Blog Page Changes */
-/* More Blog Posts (Blog sidebar) text color changes */
-  
-/* Change the title of more blog posts */
-.list_boxes .blog_posts .blog_post_link {
-  color: #cac8c4;
-}
-
-/* Change description text color */
-.list_boxes .blog_posts .blog_post_preview {
-  color: #cac8c4;
-}
-
-/* Blog post info bar color changes */
-.list_boxes .blog_posts ul li .info {
-  background: #737578 none repeat scroll 0% 0%;
-  color: #000;
-}
-
-/* Gradient fade effect color changes */
-/* This effect is seen at the bottom of the Popular Stories column on the front
- * page (and on the more blog posts sidebar, as the below code changes)
- */
-.list_boxes .blog_posts .blog_post_preview.has-more::after {
-  background: transparent linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #161616 100%) repeat scroll 0% 0%;
-}
-
-/* End Blog Page Changes */
-/* **************Section Separator*************************** */
-/* Begin Follower/follows page text changes */
-.bookshelf-card .card-content,
-.user-card .card-content {
-  background: #333333;
-}
-
-/* user card name text color change */
-.user-card h2 {
-  color: #FFF;
-}
-
-/* User card description text color change */
-.user-card .info {
-  color: #cac8c4;
-}
-
-/* change user online status icon to black for visibility */
-.user-card .online-status::after {
-  background-color: #000;
-}
-
-/* End  Follower/follows page text changes */
-/* **************Section Separator*************************** */
-/* Begin User Library changes */
-/* Bookshelf background color changes */
-.bookshelf-card {
-  background: #3a3a3a;
-}
-.bookshelf-card .card-content,
-.user-card .card-content {
-  background: #3a3a3a;
-}
-
-/*Bookshelf title change and visibility icon changes */
-.bookshelf-card h2,
-.user-card h2 {
-  color: #FFF;
-}
-
-/*Bookshelf visibility icon changes */
-.bookshelf-card h2 .fa,
-.user-card h2 .fa {
-  color: #FFF;
-}
-.fa-unlock::before {
-  color: #FFf;
-}
-
-/* Change story list container colors */
-.bookshelf-card .stories li {
-  background: #adadad none repeat scroll 0% 0%;
-  color: #323338;
-}
-
-/* End User Library changes */
-/* **************Section Separator*************************** */
-/* Bookshelf Changes */
-/* Changes colors on a user's individual bookshelves */
-/* Bookshelf Sidebar Changes */
-/* Change the background and text color of the tags when you search for them in bookmarks */
-.tags-dropdown li {
-  background: #787878;
-  color: #000;
-}
-
-/* Change the color of the number count for tags in bookshelves */
-.selected-tags li .count, .aggregate-tags li .count {
-	color: #cac8c4;
-}
-
-/* Change bookshelf Title color */
-.user_blog_post .right .bookshelves .bookshelf-name a {
-  color: #FFF;
-}
-
-/* Bookshelf description text color change */
-.user_blog_post .right .bookshelves .bookshelf-description {
-  color: #cac8c4;
-}
-
-/* Bookshelf icon background color change, might not be the best color? */
-.user_blog_post .right .bookshelves .bookshelf-icon {
-  background: #cac8c4 none repeat scroll 0% 0%;
-}
-
-/* Related Groups stories and members text color change */
-div.list_boxes ul.list li span.info {
-  color: #cac8c4;
-}
-
-/* Change the page number text color on hover for bookshelves */
-div.page_list a:HOVER {
-  color: #000;
-}
-
-/* Bookshelf filter tag background and text color change */
-.selected-tags, .aggregate-tags {
-	border: 1px solid #CCC;
-	background: #787878 none repeat scroll 0% 0%;
-}
-
-/* End Bookshelf changes */
-/* **************Section Separator*************************** */
-/* Begin User Statistics changes */
-/* Change chart title text color */
-.user-stats h1 {
-  color: #cac8c4;
-}
-
-/* Change chart background to still be readable with the black text and lines */
-.user-stats .chart {
-  background: #787878;
-}
-
-/* Change the chart information boxes */
-/* Chart info box description changes */
-table.properties td.label {
-  background-color: #787878;
-  color: #FFF;
-}
-table.properties > tr:nth-child(2n+1) td.label,
-table.properties > tbody > tr:nth-child(2n+1) td.label {
-  background-color: #787878;
-  color: #FFF;
-}
-
-/* Chart info box number changes */
-table.properties td {
-  background-color: #adadad;
-  color: #FFF;
-}
-
-/* End User Statistics Changes */
-/* **************Section Separator*************************** */
-/* Begin User Mail Page Changes */
-/* Changes PM body content box colors */
-table.properties .bbcode-editor textarea {
-  background: #36393e;
-  color: #cac8c4;
-}
-
-/* Changes Recipient box colors */
-table.properties input[type="text"] {
-  background-color: #36393e;
-  color: #cac8c4;
-  text-shadow: 0px 0px;
-}
-
-/* Change bottom bars of the PM window to the right colors */
-div.overlay_container table.popup td.content {
-  background-color: #707275;
-}
-
-/* Change footer bar background color */
-div.overlay_container table.popup td.footer {
-  background-color: #707275;
-}
-
-/* Add Link Changes */
-.drop-down-pop-up-container .drop-down-pop-up {
-  background: #3a3a3a;
-}
-
-/* End User Mail Page Changes */
-/* **************Section Separator*************************** */
-/* Begin User Settings Changes */
-/* User Settings buttons hover text color change */
-div.user_cp .tabs ul li a:HOVER {
-	color: #000;
-}
-
-/* Change titles for each account page to something readable */
-.user-cp-content-box h1 {
-  color: #cac8c4;
-}
-
-/* change tooltip text popup color */
-div.tooltip_popup,
-div.tooltip_popup_tooltip {
-  color: #000;
-}
-
-/* Change drop down selection menu background and text color. Also remove text shadow */
-/* This affects text fields as well, password and name input fields specifically */
-table.properties input,
-table.properties select,
-table.properties textarea {
-  color: #cac8c4;
-  background-color: #333;
-  text-shadow: 0px 0px rgba(255, 255, 255, 0.8);
-}
-
-/* change the background color of text input fields (the short bio text field in Edit Account is an example) */
-table.properties input[type="text"] {
-  background-color: #333;
-}
-
-/* make the first item in the button lists on the right column have the same
- * borders as the rest of the list */
-div.user_cp .tabs h1 {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #D6D2CB #BEBAB5 #BEBAB5 #D6D2CB;
-  -moz-border-top-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-bottom-colors: none;
-  -moz-border-left-colors: none;
-  border-image: none;
-}
-
-/* Multi-factor account page text color changes */
-.generic_content_box_content p {
-  color: #cac8c4;
-}
-.generic_content_box_content {
-  color: #FFF;
-}
-
-/* End User Settings Changes */
-/* **************Section Separator*************************** */
-/* Begin Group Page (and related) Changes */
-/* Group Notification Settings background and text color changes */
-div.group div.settings {
-	color: #cac8c4;
-	background-color: #333;
-}
-
-/* Story Featured in fixes */
-.list_boxes .groups ul li a span {
-  color: #cac8c4;
-}
-
-/* Change group title color on group page */
-div.group div.menu a.group_name {
-  color: #FFF;
-}
-
-/* Change 'Founded By' text color */
-div.group div.menu span.members {
-  color: #cac8c4;
-}
-
-/* Change link color for who founded the group */
-div.group div.menu span.members a {
-  color: #3aa019;
-}
-
-/* Change group description text color */
-div.group div.group_description {
-  color: #cac8c4;
-}
-
-/* Change color of member join date text */
-div.group div.member span.info {
-  color: #cac8c4;
-}
-
-/* Change group stories box background color */
-div.group div.folders {
-  background-color: #333;
-}
-
-/* change group story folder color, drop shadow color, link color, and add a drop
- * shadow to the link to make it readable
- */
-div.group div.folders a.folder {
-  background-color: #737578;
-  border: 1px solid #CCC;
-  box-shadow: 3px 3px 1px #000;
-  color: #FFF;
-}
-
-/* Change the count text in group story folders color */
-div.group div.folders a.folder span.count {
-  color: #000;
-}
-
-/* Trending Groups box background color change */
-div.dashboard ul.list li {
-	background-color: #333;
-}
-
-div.dashboard ul.list li:nth-child(2n+1) {
-	background-color: #333;
-}
-
-/* Group Search Results background and text color changes */
-table.post_table tr {
-	background-color: #adadad;
-  color: #000;
-}
-
-/* End Group Page Changes */
-/* **************Section Separator*************************** */
-/* Begin Forum Changes */
-/* Change fourm header links text color */
-ul.breadcrumbs li {
-  color: #cac8c4;
-  text-shadow: 0px 0px;
-}
-
-/* change forum header arrow icon color */
-ul.breadcrumbs li::after {
-  color: #cac8c4;
-}
-
-/* Change forum topic background colors */
-/* Odd topic background color */
-div.thread_list table td:first-child {
-  background-color: #adadad;
-  color: #000;
-}
-
-/* For some reason odds need this extra code to get the Replies and Last Post columns to change too */
-div.thread_list table td:last-child {
-  background-color: #adadad;
-  color: #000;
-}
-div.thread_list table tr td {
-  background-color: #adadad;
-  color: #000;
-}
-
-/* Even topic background color */
-div.thread_list table tr:nth-child(2n+1) td {
-  background-color: #adadad;
-  color: #000;
-}
-
-/* Forum topic link color */
-div.thread_list table td a.thread-title {
-  font-weight: bold;
-  color: #3aa019;
-}
-
-/* Change the text color of the forum header text (Thread and Last Post) */
-div.thread_list table tr.header td {
-  color: #FFF;
-}
-
-  /* Change lock icon color for locked threads */ 
-  div.thread_list table td i.fa-lock {
-	color: #952525;
-}
-
-/* End Forum Changes */
-/* **************Section Separator*************************** */
-/* Begin Story Page Specific Changes */
-/* Story page button hover color changes */
-/* Changes statistics and add to group button icon when hovered */
-/* These changes are a bit jerryrigged. It only applies the color when the mouse is directly over the icon, rather than when the button is hovered over. These icons / symbols don't appear to like being changed */
-a.styled_button.styled_button_grey .fa:HOVER {
-  color: #000;
-}
-
-a.button_next_comments .fa:HOVER{
-  color: #000;
-}
-
-  /* Fix the image link box background color if used in story description to match the theme */ 
-  .description div {
-    background-color: #737578 !important;
-  }
-  
-/* Fix selected page number to match the rest of the page number borders */
-.page_list > ul > li.selected > a,
-.page_list_info > ul > li.selected > a {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #D6D2CB #BEBAB5 #BEBAB5 #D6D2CB;
-  -moz-border-top-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-bottom-colors: none;
-  -moz-border-left-colors: none;
-  border-image: none;
-}
-
-/* Fix author and story names so they show up better */
-.story_container .title .story_name {
-  color: #cac8c4;
-}
-
-/* Change author name to stand out more */
-.story_container .title .author a {
-  color: #FFF;
-  font-weight: bold;
-}
-
-/* Spoiler tag changes so it shows up on new background */
-span.spoiler {
-  background-color: #000;
-  color: #000;
-  text-shadow: none;
-}
-
-/* change the extra story data boxes */
-.story_container .extra_story_data {
-  border-top: 1px solid #C2C2C2;
-  background-color: #5e636e;
-  overflow: hidden;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-/* Date approved and last modified box changes */
-.story_container .extra_story_data span.date_approved,
-.story_container .extra_story_data span.last_modified {
-  color: #000;
-  background-color: #95979f;
-}
-
-/* Date approved and last modified text change */
-.story_container .extra_story_data span.date_approved .published,
-.story_container .extra_story_data span.last_modified .published {
-  color: #FFF;
-}
-
-/* Change the color of the buttons with grey icons to a lighter shade of grey */
-a.styled_button.styled_button_grey .fa,
-button.styled_button.styled_button_grey .fa {
-  color: #cac8c4;
-}
-
-/* Change chapter container colors  to fit better */
-.story_container ul.chapters {
-  background-color: #282828;
-}
-
-/* Change the chapter information color (# of words for each chapter, etc) */
-.story_container ul.chapters li {
-  color: rgba(255,255,255,0.8);
-}
-.story_container ul.chapters li.bottom {
-  background-color: #787878;
-  color: #FFF;
-}
-
-/* Changes the unread box next to a chapter title to white for visibility */
-.story_container ul.chapters li .chapter-read-icon {
-  color: #FFF;
-}
-
-/* End Story Page Specific Changes */
-/* **************Section Separator*************************** */
-/* Begin Story Chapter Specific Changes */
-/* Begin Add To Bookshelf Menu Changes */
-/*Changes the outer story description box background and text color */
-.drop-down-pop-up-container .drop-down-pop-up .std .story-preview {
-  background: #737578 none repeat scroll 0% 0%;
-}
-
-/* Changes the inner story description box background and text color */
-.drop-down-pop-up-container .drop-down-pop-up .std .story-preview div {
-  background: #3a3a3a none repeat scroll 0% 0%;
-  color: #cac8c4;
-}
-
-/* Changes the search bookshelf bar color */
-.drop-down-pop-up-container .drop-down-pop-up .std label {
-  background: #737578 none repeat scroll 0% 0%;
-}
-
-/* Change the search bookshelf text box background and text color */
-.drop-down-pop-up-container .drop-down-pop-up .std input[type="text"],
-.drop-down-pop-up-container .drop-down-pop-up .std input[type="url"],
-.drop-down-pop-up-container .drop-down-pop-up .std select {
-  background: #3a3a3a none repeat scroll 0% 0%;
-  color: #cac8c4;
-}
-
-/* Changes the bookshelves list background and text color */
-.drop-down-pop-up-container .drop-down-pop-up .std ul li a {
-  background: #3a3a3a;
-  color: #cac8c4;
-}
-
-/* Change bookshelf menu footer bar color */
-.drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer,
-.drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer-right {
-  background: #737578;
-}
-
-/* End Add To Bookshelf Menu Changes */
-/* Story Info Bar background color change */
-.story-page-header,
-.user-page-header {
-  background-color: #333;
-  color: #eee;
-  text-shadow: 0px 1px 0 #1a1a19;
-  border-bottom: 1px solid #111;
-  box-shadow: none;
-}
-
-/* Story Info Bar mini box color change (Published and views box at top of story ) */
-.story-page-header ol,
-.user-page-header ol {
-  background: #cbc9c4 none repeat scroll 0% 0%;
-}
-
-/* Chapter title background color change */
-.content_format_wob div.title,
-.content_format_medium_dark div.title,
-.content_format_dark_red div.title,
-.content_format_dark_blue div.title,
-.content_format_dark_purple div.title,
-.content_format_ultra_dark div.title,
-.content_format_high_dark div.title,
-.content_format_luna div.title {
-  background: #1a1a1a;
-}
-
-/* Chapter progress bar indicator change */
-#chapter_scrubber_indicator {
-  background-color: #6a110c;
-}
-#chapter_scrubber_page {
-  background-color: #6a110c;
-}
-#chapter_scrubber_bar {
-  background-color: #161616;
-}
-
-/* Change the background color of the story content box to match the theme */
-.story_content_box {
-  background: #333333;
-  color: #cac8c4;
-}
-
-  /* Ensure that the background color of chapters is consistent */
-div.chapter {
-	background: #1a1a1a;
-}
-
-/* Begin Raiting Box changes */
-/* Rating Box text color change */
-div.rating_container {
-  color: #e0ecff;
-}
-
-/* Change the background color and add/change text shadow to make text more visible */
-.story_container div.story-toolbar div.right {
-  background: #5e636e repeat scroll 0% 0%;
-  text-shadow: 1px 1px #000;
-}
-
-/* Change the color of text for unselected up / down votes */
-div.rating_container a.like_button,
-div.rating_container a.dislike_button {
-  color: #FFF;
-}
-
-/* Change the color of a clicked dislike button text to be more visible */
-div.rating_container a.dislike_button_selected {
-  opacity: 1;
-  color: #952525;
-}
-
-/* Change the color of a clicked like button text to be more visible */
-div.rating_container a.like_button_selected {
-  color: #49c81f;
-}
-/* End Raiting Box changes */
-
-/* Begin Bookshelf Bar Changes */
-/* Changes the bookshelf bar background */
-.story-toolbar .bookshelves li.unselected {
-  background: #5e636e none repeat scroll 0% 0% !important;
-}
-
-/* Changes each bookshelf icon to have a black text shadow */
-.story-toolbar .bookshelves li {
-  text-shadow: 1px 1px #000;
-}
-
-/* Change the color of the bookshelf icons */
-.story-toolbar .bookshelves li span::before {
-  color: #cac8c4;
-  transition: color 0.2s ease 0s;
-}
-
-/* Change the color of the ... text */
-.story-toolbar .bookshelves li.unselected.show-bookshelves-popup span {
-  color: #cac8c4;
-}
-/* End Bookshelf Bar Changes */
-
-/* Author's note changes */
-/* Interestingly, all the themes have an author's note setting for them, these two work with the Dark color setting for FIMfic chapters. The .content_format_wob authors-note is required followed by the theme you want to change. */
-.content_format_wob div.authors-note, .content_format_luna div.authors-note {
-	border-color: #FFF !important;
-	background: #36393e !important;
-	color: #cac8c4 !important;
-}
-
-  /* Changes the background and text color of blockquotes that authors seem to use in their story chapters to something that's readable. */
-  /* Interestingly, all the themes have a block quote setting for them, these two work with the Dark color setting for FIMfic chapters. The .content_format_wob blockquote is required followed by the theme you want to change. */
-  /* This does not appear to affect other blockquotes, such has user comment quotes */
-.content_format_wob blockquote, .content_format_luna blockquote {
-  background-color: #36393E;
-  color: #cac8c4;
-  }
-
-/* Change chapter footer */
-div.chapter_footer {
-  color: #FFF;
-  background-color: #5e636e;
-}
-
-/* Previous, Chapter, and Next button changes */
-a.styled_button.styled_button_grey,
-button.styled_button.styled_button_grey {
-  background-color: #3a3a3a;
-  Color: #cac8c4;
-  text-shadow: 1px 1px #000;
-}
-a.styled_button.styled_button_grey:HOVER,
-button.styled_button.styled_button_grey:HOVER {
-  background: #EEE;
-  color: #333;
-}
-
-/* Fix previous, chapter and next icons in buttons to match  */
-.fa-arrow-circle-left::before {
-  color: #cac8c4;
-}
-.fa-caret-down::before {
-  color: #cac8c4;
-}
-.fa-arrow-circle-right::before {
-  color: #cac8c4;
-}
-
-/* Begin Chapter menu drop down changes */
-/* Change the background of the menu to match the theme */
-.button-group .drop-down,
-.button-group-vertical .drop-down {
-  background: #3a3a3a none repeat scroll 0% 0% padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  color: #cac8c4;
-}
-
-/* Change currently selected / viewed chapter to red for contrast */
-.button-group .drop-down ul li.selected a,
-.button-group-vertical .drop-down ul li.selected a {
-  color: #FFF;
-  background: #6a110c none repeat scroll 0% 0%;
-}
-
-/* drop down chapter hover text color change */
-.button-group .drop-down ul li a:HOVER {
-  background: #EEE !important;
-  color: #000;
-}
-
-  /* Keep the current/selected chapter color the same on hover */
-  .button-group .drop-down ul li.selected a:HOVER {
-  background: #6a110c !important;
-  color: #000;
-}
-
-/* End chapter menu drop down changes */
-
-/* Begin Comment Specific Changes */
-/* Begin Story Comment Buttons Hover color changes */
-/* Changes the color of the refresh comments icon when hovered */
-a.refresh_comments:HOVER {
-  color: #000;
-}
-
-/* Changes the comment settings icon when hovered */
-a.drop-down-expander:HOVER {
-  color: #000;
-}
-
-/* Changes the post new comment icon when hovered */
-a.jump-to:HOVER {
-  color: #000;
-}
-
-/* Changes the comment page number text color when hovered */
-li.page a:HOVER {
-  color: #000;
-}
-/* End Story Comment Buttons Hover color changes */
-
-/* Changes the background color of the comment preview box when you hover over a green username link in a comment */
-div.quote_container {
-	background-color: #161616 !important;
-}
-
-/* Fixes the expanded comment having a background that went outside its box */
-.comment.expanded_comment  {
-	background: #333 !important;
-}
-
-/* Changes the body text of an expanded comment to be more readable */
-.comment.expanded_comment .data  {
-	color: #000 !important;
-}
-
-/* Changes the header of an expanded comment to be more readable */
-.comment.expanded_comment .comment_information {
-  color: #FFF !important;
-}
-
-/* Comment like color change */
-.comment .comment_information .comment_like_text {
-  color: #49c81f;
-  font-weight: bold;
-}
-
-/* Comment background change */
-.comment_list {
-  background: #161616;
-}
-div.comment:nth-child(odd) {
-  background-color: #161616;
-}
-
-/* Comment quote changes */
-blockquote {
-  color: #000;
-  background: #adadad none repeat scroll 0% 0%;
-}
-
-/* Comment input box changes */
-/* Changes the content box for entering your comments */
-textarea#comment_comment {
-  background-color: #36393e;
-  color: #cac8c4;
-}
-
-/* Edit comment input text box changes */
-.comment .data .edit_area textarea {
-  background-color: #36393e;
-  color: #cac8c4;
-}
-
-/* Changes the comment input box footer color */
-div.add_comment_toolbar {
-  background: #36393e;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #686a6e), color-stop(100%, #77797c));
-  background: -webkit-linear-gradient(top, #686a6e 0%, #77797c 100%);
-  background: linear-gradient(to bottom, #686a6e 0%, #77797c 100%);
-}
-
-/* Changes the comment input boxtoolbar background and text color (where you can choose the formatting you want to use) */
-div.format-toolbar {
-  background: #36393e;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #686a6e), color-stop(100%, #77797c));
-  background: -webkit-linear-gradient(top, #686a6e 0%, #77797c 100%);
-  background: linear-gradient(to bottom, #686a6e 0%, #77797c 100%);
-  color: #cac8c4;
-}
-
-.format-toolbar>ul>li>a:hover,
-.format-toolbar>ul>li>button:hover {
-  background: #555;
-  border-color: rgba(255,255,255,0.2);
-}
-
-/* Page list info changes (Viewing and buttons) */
-.page_list > ul > li > a,
-.page_list > ul > li > span,
-.page_list_info > ul > li > a,
-.page_list_info > ul > li > span {
-  color: #cac8c4;
-}
-/* End Comment Specific Changes */
-/* End Story Chapter Specific Changes */
-/* **************Section Separator*************************** */
-/* Begin Chat Page Changes */
-/* Changes heading color to be noticeably visible */
-div.content_box div.content_box_header h2 {
-  color: #FFF;
-}
-/* End Chat Page Changes */
-/* **************Section Separator*************************** */
-  /* Begin Character Tag Page Changes */
-  /* Change character name and related tag text to be readable */
-  .tag-header h1 a, .tag-header h2 a {
-	color: #000;
-}
-
-  /* Change the color of the symbol infront of the Related Tags text to be visible */
-  .fa-tags::before {
-	color: #000;
-}
-
-  /* Change the 'art by' text to be readable */
-  .tag-header .image {
-	color: #000;
-}
-
-  /* Change story heading text color to be readable */
-  .tag-page .main-content h1 {
-	color: #cac8c4;
-
-}
-
-  /* Change the meta table information to be more readable */
-  .tag-page .tag-meta table.properties td {
-color: #000;
-}
-
-  /* change the meta table headings to be more readable */
-  .tag-page .tag-meta table.properties td.label {
-	color: #FFF;
-}
-
-  /* End Character Tag Page Changes */
-  /* **************Section Separator*************************** */
-
-    /* Begin Tag Information Page Changes */
-  /* Change the tag background and text color on the FAQ --> Tag Information page */
-  .tags_information p .tag {
-	background-color: #787878;
-  color: #FFF;
-}
-
-/* End Tag Information Page Changes */
-   /* **************Section Separator*************************** */
-  /* Begin FAQ Page Changes */ 
-  /*Change the answer box to FAQ questions to fit the theme */  
-  .faq .answers > li.expanded .answer, .rules .answers > li.expanded .answer, .tags_information .answers > li.expanded .answer {
-    background-color: #ADADAD;
-    color: #000;
-}
-  /* End FAQ Page Changes */ 
-  /* **************Section Separator*************************** */
-
-  /* Begin Writing Guide Page Changes */
-  /* Change the page heading text color */
-  div.writing_guide h1 {
-	color: #cac8c4;
-}
-
-  /* Change the body text color */
-  div.writing_guide .writing-guide-content {
-	color: #cac8c4;
-}
-
-  /* Change the color of the quote/example boxes, remove the text shadow, and make the border visible */
-  div.writing_guide blockquote {
-	background-color: #ADADAD;
-    text-shadow: 0px 0px rgba(255,255,255,0.8);
-    border: 1px dashed rgba(234, 234, 234, 1);
-}
-
-  /* Change the color of the good/bad example boxes */
-  div.writing_guide code, div.writing_guide kbd {
-	background-color: #ADADAD;
-}
-
-  /* Change the color of the "bad" text to be more readable */
-  div.writing_guide .bad {
-	color: #952525;
-}
-
-  /* Change the heading 3 color */
-  div.writing_guide h3 {
-	color: #cac8c4;
-}
-
-  /* Begin Back to Top link color changes */
-  div.writing_guide .backtop a {
-	color: #3aa019;
-}
-
-  /* needs fixing */
-  div.writing_guide .backtop a:hover {
-    color: rgb(50, 51, 56) !important;
-  }
-
-  div.writing_guide .backtop a:visited {
-	color: #000;
-}
-  /* End Back to Top link color changes */
-
-  /* Begin Appendix A table color changes */
-  div.writing_guide table.solid tr.odd {
-	background: #ADADAD;
-  color: #000;
-}
-
-  div.writing_guide table.solid tr.even {
-	background: #ADADAD;
-  color: #000;
-}
-  /* End Appendix A table color changes */
-
-  /* End Writing Guide Page Changes */
-  /* **************Section Separator*************************** */
-
-/* **************Section Separator*************************** */
-/* TODO: Merge into newer sections */
-/* Original changes credit quick_study of FIMFic */
-a:hover {
-  color: #5aaC19;
-}
-div.blog_post_content {
-  color: #ccc;
-}
-div.user_blog_post ul.list li a {
-  color: #63af23;
-}
-div.user_blog_post ul.list li a:hover,
-div.list_boxes ul.list li a:hover {
-  color: #58ad15;
-}
-div.light_toolbar {
-  background-color: #333;
-}
-div.content_box_header h2,
-div.front_page div.featured_box div.right a.title {
-  color: #ccc;
-}
-div.emoticons_panel {
-  background-color: #3a3a3a;
-}
-div.add_comment_toolbar {
-  background-color: #333;
-}
-div.front_page div.featured_box div.right div.description,
-div.list_boxes span.short_description,
-div.content div.content_box div.main div.story div.right div.description {
-  color: #aaa;
-}
-div.front_page div.featured_box div.left ul li div.arrow {
-  border-right-color: #333;
-}
-div.content div.content_box div.main div.story img.story_image {
-  background-color: #2a2a2a;
-  box-shadow: 1px 1px 4px #222;
-}
-div.content div.content_box div.main div.story ul.chapters {
-  background-color: #555;
-  border-top-color: #aaa;
-}
-div.content div.content_box div.main div.story ul.chapters li.bottom {
-  background-color: #555;
-  color: #ccc;
-}
-ul.chapters li {
-  border-bottom-color: #aaa;
-  color: #aaa;
-}
-div.user_page div.biography {
-  color: #999;
-}
-div.front_page_right_column ul.list li {
-  min-height: 50px;
-}
+		border: 1px solid #484848;
+		border-radius: 4px;
+	}
+
+	/* Change drop down menu hover background and text color */
+	.button-group .drop-down ul li a:hover,
+	.button-group-vertical .drop-down ul li a:hover,
+	.drop-down-button .drop-down ul li a:hover {
+		color: #000;
+		background: #a4a4a4;
+	}
+
+	/* Change the blue menu bar drop downs background and text color */
+	.user_toolbar > ul > li ul {
+		background: #3a3a3a;
+		color: #cac8c4;
+	}
+
+	/* Change the blue menu bar (user menu) drop down background and text color on hover */
+	.user_toolbar > ul > li ul li:hover > a {
+		background: #a4a4a4;
+		color: #000;
+	}
+
+	/* Change background color of the user menu icons in the drop down menu */
+	.user_toolbar > ul > li ul i,
+	.user_toolbar > ul > li ul .bookshelf-icon-element {
+		background: #a4a4a4;
+	}
+
+	/* Change the user card numbers to be readable */
+	.user-card .user-links a .number {
+		color: #FFF;
+	}
+
+	/* Change user comment image container boxes */
+	.collapsed-image-container {
+		background-color: #747579;
+	}
+
+	/* comment (user post) toolbar Changes */
+	.add_comment .format-toolbar {
+		background: #727477;
+	}
+
+	/* Change the background color of user comment's info bar (post date, likes/dislikes, etc */
+	.comment .data {
+		background-color: #333;
+		color: #cac8c4;
+	}
+
+	/* Change the number of likes on a comment color to be a bit more visible green */
+	.comment .comment_information .comment-like .like-text {
+		color: #5aaC19;
+	}
+
+	/* Change the background color of user comment block quotes */
+	.bbcode blockquote,
+	.article blockquote {
+		background: #484848;
+	}
+
+	/* Chang the color of quoted users in user comments */
+	.comment .comment_quote_link {
+		color: #3aa019;
+	}
+
+	/* Fixes the expanded comment having a background that went outside its box */
+	.comment.expanded_comment {
+		background: #333 !important;
+	}
+
+	/* Changes the background color of the comment preview box when you hover over a green username link in a comment */
+	.quote_container .comment {
+		background-color: #161616 !important;
+	}
+
+	/* Add a shadow to the link text for a user posted image to make it more readable */
+	.collapsed-image-container .user_image_link {
+		text-shadow: 1px 1px 1px black;
+	}
+
+	/* Change the comment page number bar */
+	.page_list {
+		background-color: #333;
+	}
+
+	/* Change the text color of the comment page number bar */
+	.page_list > ul > li > a,
+	.page_list > ul > li > span,
+	.page_list_info > ul > li > a,
+	.page_list_info > ul > li > span {
+		color: #cac8c4;
+	}
+
+	/* Change the text and background color of the comment page number bar when hovered */
+	.page_list > ul > li > a:hover,
+	.page_list_info > ul > li > a:hover {
+		background-color: #a4a4a4;
+		color: #000;
+	}
+
+	/* Change the selected page border color on the comment page number bar */
+	.page_list > ul > li.selected > a,
+	.page_list_info > ul > li.selected > a {
+		border: 1px solid #a4a4a4;
+	}
+
+	/* Change the comment statistics bar background color to match the theme */
+	.page_list_info {
+		background-color: #333;
+	}
+
+	/* Change the comment text box typing area background color */
+	.add_comment textarea {
+		background-color: #36393e;
+		color: #cac8c4;
+	}
+
+	/* Change the background color of the comment text box footer and adjust the borders  */
+	.bbcode-editor .bbcode-editor__footer {
+		background: #6f7175;
+		border-top: 1px solid #333;
+		box-shadow: 0 0px 0 #f8f8f8 inset;
+	}
+
+	/* Remove the white rounded corners around the comment text box */
+	.add_comment .format-toolbar {
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+	}
+
+	/* Change the text color of the "Featured In" groups sidebar group names */
+	.sidebar-group-list .group-name {
+		color: #3aa019;
+	}
+
+	/* Change the background color of the "Featured In" sidebar contents when hovered */
+	.sidebar-group-list li > a:hover {
+		background: #484848;
+	}
+
+	/* Change the background and text color of the PM popup box text area */
+	.bbcode-editor textarea {
+		background-color: #36393e;
+		color: #cac8c4;
+	}
+
+	/* H1 color Change on the report button page */
+	.content_box > h1.wide,
+	.user-cp-content-box > h1.wide {
+		color: #cac8c4;
+	}
+
+	/* Small text color Change on the report button page */
+	.properties td.label .small {
+		color: #cac8c4;
+	}
+
+	/* Change the search result info box that appears in the top right of a user's followers and following pages (and presumably other places too) */
+	div.search_results_count {
+		background: #444;
+		color: #cac8c4;
+	}
+
+	/* Change the text color of a disabled input text field, example being the To: field when messaging a user */
+	.properties input:disabled {
+		background-color: #787878;
+	}
+
+	/* Change the text color of navigation link text, example groups folder structure */
+	.breadcrumbs li a {
+		color: #cac8c4;
+	}
+
+	/* Change the background color of the Browse drop down box from the top menu bar */
+	.nav_bar .nav-bar-list > li > ul,
+	.nav_bar .nav-bar-list > li .nav-bar-drop-down {
+		background: #333;
+	}
+
+	/* Change the header text color of the Browse drop down box from the top menu bar */
+	.nav_bar .nav-bar-list > li > ul.browse-pane .header,
+	.nav_bar .nav-bar-list > li .nav-bar-drop-down.browse-pane .header {
+		color: #adadad;
+	}
+
+	/* Change the header bar background color when you click on the mail / notifications button on the top menu bar */
+	.nav_bar .nav-bar-list .drop-down-footer,
+	.nav_bar .nav-bar-list .drop-down-header {
+		background: #787878;
+	}
+
+	/* Change the color of the private message title link and username when you click on the mail button on the top menu bar */
+
+	/* The css here is cheeky and affects both */
+	.nav_bar .nav-bar-list > li > ul.drop-down-private-messages li a,
+	.nav_bar .nav-bar-list > li .nav-bar-drop-down.drop-down-private-messages li a {
+		color: #3aa019;
+	}
+
+	/* Change the heading 2 text color on the staff page (and presumably other places) */
+	.content_box .content_box_header h2,
+	.user-cp-content-box .content_box_header h2 {
+		color: #cac8c4;
+	}
+
+	/* Change the background color of user avatars on their user page / story page */
+	.user-page-header .avatar-container img {
+		background-color: #787878;
+	}
+
+/**** End Global Page Changes ****/
+
+/**** Begin Front Page Changes ****/
+
+	/* Change the background color of the feature box container */
+	.front_page .featured_box {
+		background: #161616;
+	}
+
+	/* Change the background color of the featured story on the front page */
+	.front_page .featured_box .featured_story {
+		background: #333;
+	}
+
+	/* Change the text color of the featured story description on the front page */
+	.front_page .featured_box .description {
+		color: #cac8c4 !important;
+	}
+
+	/* Change the background and text color of the featured story's info bar */
+	.front_page .featured_box .info {
+		background: #484848;
+		color: #a4a4a4;
+	}
+
+	/* Change the background color of the selected featured stories list */
+	.front_page .featured_box .left ul li.selected {
+		background: #7c7c7c;
+		color: #cac8c4;
+	}
+
+	/* Change the background color of the non-selected featured stories list */
+	.front_page .featured_box .left ul li {
+		background-color: #b1b1b1;
+	}
+
+	/* Fix for story cards on the front page no longer having visible story titles */
+	.story-card .story_link {
+		color: #cac8c4;
+	}
+
+	/* Fix the Recent News sidebar box background and border color */
+	.sidebar-box {
+		border: 1px solid #484848;
+		background-color: #333;
+		color: #a4a4a4;
+	}
+
+	/* Fix the Recent News Sidebar title color */
+	.sidebar-box .news-ticker li .title {
+		color: #cac8c4;
+	}
+
+	/* Change story cards to fit the theme */
+	.story-card {
+		background-color: #333;
+		color: #cac8c4;
+	}
+
+	/* Change the story card tags/warning text to be readable */
+	.story-card .story-card__tags li a {
+		color: #3aa019;
+	}
+
+	/* Change the other front page story card info bars (new story / latest update ones) to match the previous Change */
+	.story-card .story-card__info,
+	.story-card-reverse .story-card__info {
+		color: #a4a4a4;
+		background: #484848;
+	}
+
+	/* Fixes feature box story titles being invisible with the new update */
+	.front_page .featured_box .right .title a {
+		color: #cac8c4;
+	}
+
+	/* Change the color of the 'Continue Reading' box story title link on the front page */
+	.front_page .currently-reading-list .title {
+		color: #cac8c4;
+	}
+
+	/* Change the color of the progress bar for the continue reading box to something a little less glaring */
+	.front_page .currently-reading-list li .read-progress {
+		background: #1f560d;
+	}
+
+	/* Change the story info text color for the 'continue reading' box on the front page */
+	.list_boxes .list .info {
+		color: #cac8c4;
+	}
+
+	/* Change the background of the info bar when you click on an image to see it bigger */
+	.lightbox .caption {
+		background: #333;
+	}
+
+	/* Fix like and dislike icons for comments to be visible again */
+	.comment .comment_information .comment-like span {
+		color: #cac8c4;
+	}
+
+	/* Fix the browse button menu links to be visible again */
+	.nav_bar .nav-bar-list > li > ul.browse-pane ul li a,
+	.nav_bar .nav-bar-list > li .nav-bar-drop-down.browse-pane ul li a {
+		color: #cac8c4;
+	}
+
+	/* Change the color of the browse button menu link hover */
+	.nav_bar .nav-bar-list > li > ul.browse-pane ul li a:hover,
+	.nav_bar .nav-bar-list > li .nav-bar-drop-down.browse-pane ul li a:hover {
+		color: #FFF;
+	}
+
+	/**** End Front Page Changes ****/
+
+	/**** Begin tag dictionary page Changes ****/
+
+	/* Change the text color of the tag links */
+	.tag-directory ul li a {
+		color: #3aa019;
+	}
+
+	/* Change the background and text color of the letter header box */
+	.tag-directory h2 span {
+		background-color: #484848;
+		color: #cac8c4;
+	}
+
+/**** End tag dictionary page Changes ****/
+
+/**** Begin specific tag page Changes ****/
+
+	/* Change the text color of the tag links */
+	/* Change the character info card background and text color */
+	.tag-header .info {
+		background-color: #484848;
+		color: #cac8c4;
+	}
+
+	/* Change the character info card container background to give it a border */
+	.tag-header .tag-header-inner {
+		background-color: #333;
+	}
+
+	/* Change the header 1 text color for the specific tag pages */
+	.tag-page .main-content h1 {
+		color: #cac8c4;
+	}
+
+	/* Change the background and text color of the name bar for related characters */
+	.tag-page .related-characters li .name {
+		background-color: #484848;
+		color: #cac8c4;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+
+	/* Change the description text color for series tags */
+	.tag-header .bbcode {
+		color: #cac8c4;
+	}
+
+/**** End specific tag page Changes ****/
+
+/**** Begin News Archive page Changes ****/
+
+	/* Change the background and text color of the site post tags area */
+	.site-post-tags.generic_content_box_content a {
+		background-color: #484848;
+		color: #cac8c4;
+	}
+
+	/* Change the background and text color of the site post tags area on hover */
+	.site-post-tags.generic_content_box_content a:hover {
+		background: #a4a4a4;
+		color: #000;
+	}
+
+/**** End News Archive page Changes ****/
+
+/**** Begin account settings page Changes ****/
+
+	/* Change the background color table cell to the right of the headings in Local Settings */
+	.properties > tr,
+	.properties > tbody > tr {
+		background-color: #484848;
+	}
+
+	/* Change the background color of the heading table cell in Local Settings */
+	td.section_header {
+		background-color: #484848 !important;
+	}
+
+	/* Change the background and text color of the right side table cells in Local Settings */
+	table.properties td {
+		background-color: #787878;
+		color: #FFF;
+	}
+
+	/* Change the background and text color of the right setting sidebar options */
+	.user_cp .tabs ul li {
+		background-color: #333;
+		color: #FFF;
+	}
+
+	/* Change the background and text color of the right setting sidebar options when hovered */
+	.user_cp .tabs ul li a:hover {
+		background-color: #787878;
+		color: #FFF;
+	}
+
+	/* Change the background and text color of the right setting sidebar options when selected */
+	.user_cp .tabs ul li.tab_selected {
+		font-weight: 600;
+		color: #000;
+		background: #d7ce7d;
+	}
+
+	/* Change the text color of the account setting input fields if valid to be readable */
+	.properties input.valid,
+	.properties input:required:valid {
+		color: #3aa019;
+	}
+
+	/* Change the background and text color of the multi factor auth account setting page */
+	.generic_content_box_content {
+		background-color: #484848;
+		color: #cac8c4;
+	}
+
+	/* Change the background of the user header table in the Avatar account setting page */
+	.user-cp-content-box {
+		background-color: #484848;
+		color: #cac8c4;
+	}
+
+	/* Change the informational message for choosing a header color in the Avatar account setting page */
+	.message,
+	.error-message,
+	.success-message {
+		background-color: #d7ce7d;
+		color: #000;
+	}
+
+	/* Change the add new module buttons in the user page account settings */
+	.styled_button.styled_button_white {
+		text-shadow: none;
+		background: #484848;
+		color: #cac8c4;
+	}
+
+	/* Chagne the footer background color of the add new module area in the user page account settings */
+	div#user_page_editing_toolbar > div {
+		background: #484848 !important;
+	}
+
+/**** End account settings page Changes ****/
+
+/**** Begin Invitations page Changes ****/
+
+	/* Change the background and text color of the heading area for the invitation page */
+	.content_box > h1,
+	.user-cp-content-box > h1 {
+		background-color: #333;
+		color: #cac8c4;
+	}
+
+	/* Change the invitation list table background and text color */
+	.simple_table thead td {
+		background-color: #333 !important;
+		color: #cac8c4;
+	}
+
+/**** End Invitations page Changes ****/
+
+/**** Begin User Blog Posts Changes ****/
+
+	/* Change blog post text to be readable */
+	.blog-post-content-box .blog_post_content {
+		color: #cac8c4;
+	}
+
+	/* Change blog post information bar (author name, views, report link) and story card info bar on front page */
+	.blog-post-content-box .information_box {
+		color: #a4a4a4;
+		background: #484848;
+	}
+
+	/* Change the background color of user blog posts */
+	.blog-post-content-box {
+		background-color: #333;
+	}
+
+	/* Change the color of the user blog post header link text */
+	.blog-post-content-box h1 .resize_text a {
+		color: #cac8c4;
+	}
+
+/**** End User Blog Posts Changes ****/
+
+/**** Begin User About Page Changes ****/
+
+	/* Change the background and text color of the about page content boxes */
+	.content_box {
+		background-color: #333;
+		color: #cac8c4;
+	}
+
+	/* Change the Header color for the about page content boxes */
+	.bbcode h1,
+	.article h1 {
+		color: #cac8c4;
+	}
+
+	/* Change chart title text color */
+	.user-stats h1 {
+		color: #cac8c4;
+	}
+
+	/* Change chart background to still be readable with the black text and lines */
+	.user-stats .chart {
+		background: #787878;
+	}
+
+	/* Change the chart information boxes */
+	/* Chart info box description Changes */
+	table.properties td.label {
+		background-color: #787878;
+		color: #FFF;
+	}
+	table.properties > tr:nth-child(2n+1) td.label,
+	table.properties > tbody > tr:nth-child(2n+1) td.label {
+		background-color: #787878;
+		color: #FFF;
+	}
+
+	/* Change the color of the external account links */
+	.user-about ul.external-accounts a {
+		color: #3aa019;
+	}
+
+	/* Change the background and text color of the top stories' story info bar */
+	.bbcode .story-card .story-card__info,
+	.article .story-card .story-card__info {
+		background: #484848;
+	}
+
+/**** End User About Page Changes ****/
+
+/**** Begin Bookshelf Page Changes ****/
+
+	/* Change the color of the user bookshelf box backgrounds on the library page */
+	.bookshelf-card .card-content,
+	.user-card .card-content {
+		background-color: #3a3a3a !important;
+	}
+
+	/* Change the color of the bookshelf name text/link on the library page */
+	.bookshelf-card h2 a,
+	.user-card h2 a {
+		color: #cac8c4;
+	}
+
+	/* Change the background and text color of the bookshelf story list on the library page */
+	.bookshelf-card .stories li {
+		background: #adadad;
+		color: #333;
+	}
+
+	/* Change the bookshelf title link text color in the 'My Bookshelves' sidebar when you're viewing a bookshelf. */
+	.list_boxes .bookshelves .bookshelf-name {
+		color: #cac8c4 !important;
+	}
+
+	/* Change the selected bookshelf info card at the top of the sidebar when viewing a bookshelf */
+	.list_boxes .bookshelves li.selected {
+		background-color: #333;
+	}
+
+	/* Change the bookshelf info card description text color when viewing a bookshelf */
+	.list_boxes .bookshelves .bookshelf-description {
+		color: #cac8c4;
+	}
+
+	/* Change the search bar background and text color when viewing a bookshelf */
+	.search_options input,
+	.search_options select {
+		background: #333;
+		color: #cac8c4;
+	}
+
+	/* Change the search box icon */
+	.search_options .label > span {
+		background: #adadad;
+	}
+
+	/* Change the search bar background and text color when viewing a bookshelf and in focus (typing in it) */
+	.search_options input:focus,
+	.search_options select:focus {
+		background: #d7ce7d;
+		color: #000;
+	}
+
+	/* Change the bookshelf info card sidebar box when viewing a bookshelf */
+	.bookshelf-sidebar-list li.selected {
+		background: #333;
+	}
+
+	/* Change the bookshelf info card sidebar box text color when viewing a bookshelf */
+	.bookshelf-sidebar-list .bookshelf-description {
+		color: #cac8c4;
+	}
+
+	/* Change the bookshelf info card sidebar box bookshelf name/text color when viewing a bookshelf */
+	.bookshelf-sidebar-list .bookshelf-name a {
+		color: #cac8c4;
+	}
+
+	/* Change the sidebar tag list background color when viewing a bookshelf */
+	.aggregate-tags {
+		background: #484848;
+	}
+
+	/* Change the text color of tag links in the sidebar tag list when viewing a bookshelf */
+	.aggregate-tags li a {
+		color: #cac8c4;
+	}
+
+	/* Change the color of the icons in the sidebar tag list when viewing a bookshelf */
+	.aggregate-tags li .tag-type {
+		color: #adadad;
+	}
+
+	/* Change the color of the include tag button in the sidebar tag list when viewing a bookshelf */
+	.aggregate-tags li .include {
+		background-color: #75a83f;
+	}
+
+	/* Change the color of the exclude tag button in the sidebar tag list when viewing a bookshelf */
+	.aggregate-tags li .exclude {
+		background-color: #b93b3b;
+	}
+
+	/* Change the background and text color, and remove text shadow on the tag filter search bar when viewing a bookshelf */
+	.properties input,
+	.properties select,
+	.properties textarea {
+		color: #cac8c4;
+		background-color: #333333;
+		text-shadow: none;
+	}
+
+	/* Change the background and text color of the tag filter search bar when in focus when viewing a bookshelf */
+	.properties input:focus,
+	.properties select:focus {
+		background-color: #d7ce7d;
+		color: #000;
+	}
+
+	/* Change the text color of the tag dropdown list for filtering based on tag when clicking the filter button */
+	.tag-selector .tag-drop-down {
+		color: #cac8c4;
+	}
+
+	/* Change the background color of the tag dropdown list for filtering based on tag when clicking the filter button */
+	.tag-drop-down li {
+		background: #333;
+	}
+
+	/* Change the background color of the odd number tag dropdown list for filtering based on tag when clicking the filter button */
+	.tag-drop-down li:nth-child(2n+1) {
+		background: #333;
+	}
+
+	/* Change the background and text color of the selected tag dropdown list for filtering based on tag when clicking the filter button */
+	.tag-drop-down li[data-selected="1"] {
+		background: #d7ce7d;
+		color: #000;
+	}
+
+	/* Change the my bookshelves sidebar to have a background color for the draggable bookshelfs */
+	.bookshelf-sidebar-list .draggable {
+		background: #333;
+	}
+
+	/* Change the header text color for the Related Groups sidebar box */
+	.content_box > h1,
+	.user-cp-content-box > h1 {
+		color: #cac8c4;
+	}
+
+	/* Change the background and text color of the Related Groups sidebar list when viewing a bookshelf */
+	.sidebar-group-list li > a {
+		color: #cac8c4;
+		background-color: #484848;
+	}
+
+	/* Change the hovered background color of the Related Groups sidebar list when viewing a bookshelf */
+	.sidebar-group-list li > a:hover {
+		background: #333;
+	}
+
+	/**** End Bookshelf Page Changes ****/
+
+	/**** Emote menu Changes ****/
+
+	/* comment / post emote menu Changes */
+	.format-toolbar .emoji-selector .emoji-selector__search {
+		background: #282828;
+	}
+
+	/* Change the background of the Ponies emote menu section */
+	.format-toolbar .emoji-selector .emoji-selector__list > li.emoji-selector__header:first-child {
+		background: #282828;
+	}
+
+	/*Change the rest of the backgrounds for emote menu sections */
+	.format-toolbar .emoji-selector .emoji-selector__list > li.emoji-selector__header {
+		background: #282828;
+	}
+
+	/*Change the background of the non-selected 'quick jump section' buttons at the bottom of the emote menu */
+	.format-toolbar .emoji-selector .emoji-selector__tabs li {
+		background: #282828;
+	}
+
+/**** End emote menu Changes ****/
+
+/**** Begin New Story Page Changes (the page when you click a story link. Has its description, chapters, etc) */
+
+	/* Remove the text shadow from the ratings box and reset the text color */
+	.story_container .story-top-toolbar .right {
+		background: #484848;
+		border-color: #444;
+		color: #aeb1b6;
+	}
+
+	/* Change the background color of the story page */
+	.story_content_box {
+		background-color: #333;
+		color: #cac8c4;
+	}
+
+	/* Change the color of the story title on the story page */
+	.story_container .title .story_name {
+		color: #cac8c4;
+	}
+
+	/* Change the color of the text on the ratings bar */
+	.rating_container {
+		color: #cac8c4;
+	}
+
+	/* Change the color of the non-selected dislikes text and icon */
+	.rating_container .like_button,
+	.rating_container .dislike_button {
+		color: #cac8c4;
+	}
+
+	/* Change the color of the selected likes text and icon */
+	.rating_container .like_button_selected {
+		color: #5aaC19;
+	}
+
+	/* Change the color of the selected dislikes text and icon */
+	.rating_container .dislike_button_selected {
+		color: #952525;
+		text-shadow: 1px 1px 0px black;
+	}
+
+	/* Change the color of the progress bar for a story/chapter when viewing its story page */
+	.story_container .chapters > li .read-progress {
+		background: #1f560d;
+	}
+
+	/* Change the chapter footer bar back to the way it was */
+	.story_container .chapters-footer {
+		background-color: #484848;
+		color: #cac8c4;
+	}
+
+	/* Change the chapter footer published date box */
+	.story_container .approved-date {
+		background: #95979f;
+		color: #000;
+		text-shadow: none;
+	}
+
+	/* Change the story page chapter list background and color */
+	.story_container ul.chapters li {
+		background: #282828 !important;
+		border-bottom-color: #FFF !important;
+	}
+
+	/* Changes the top border between the chapters in the chapter list to be a little more visible */
+	.story_container .chapters li {
+		border-top: 1px solid #333;
+	}
+
+	/* Remove the text shadow from the ratings box and reset the text color */
+	.story_container .story-top-toolbar .right {
+		background: #484848;
+		border-color: #444;
+		color: #aeb1b6;
+	}
+
+	/* Change the drop down arrow on the ratings box to match the theme */
+	.story_container .story-top-toolbar .right .drop-down-expander {
+		background: #484848;
+	}
+
+	/* Set the background color for the bookshelf buttons in the top left of a story page */
+	.story-top-toolbar .bookshelves li.unselected {
+		background: #484848 !important;
+	}
+
+	/* Remove the text shadow from the bookshelf buttons */
+	.story-top-toolbar .bookshelves li {
+		color: #cac8c4;
+		text-shadow: 0px 0px rgba(255, 255, 255, 0.5);
+	}
+
+	/* Set the color of the unselected bookshelf buttons to be more visible */
+	.story-top-toolbar .bookshelves li span::before {
+		color: #cac8c4;
+		-webkit-transition: color .2s;
+		transition: color .2s;
+	}
+
+	/* Change the spoiler tag background back to the way it was for visibility */
+	.bbcode .spoiler,
+	.article .spoiler {
+		background-color: #000;
+		color: transparent;
+		text-shadow: none;
+	}
+
+/** Begin Add To Bookshelf Menu Changes **/
+
+	/*Changes the outer story description box background and text color */
+	.drop-down-pop-up-container .drop-down-pop-up .std .story-preview {
+		background: #737578 none repeat scroll 0% 0%;
+	}
+
+	/* Changes the inner story description box background and text color */
+	.drop-down-pop-up-container .drop-down-pop-up .std .story-preview div {
+		background: #3a3a3a none repeat scroll 0% 0%;
+		color: #cac8c4;
+	}
+
+	/* Changes the search bookshelf bar color */
+	.drop-down-pop-up-container .drop-down-pop-up .std label {
+		background: #737578 none repeat scroll 0% 0%;
+	}
+
+	/* Change the search bookshelf text box background and text color */
+	.drop-down-pop-up-container .drop-down-pop-up .std input[type="text"],
+	.drop-down-pop-up-container .drop-down-pop-up .std input[type="url"],
+	.drop-down-pop-up-container .drop-down-pop-up .std select {
+		background: #3a3a3a none repeat scroll 0% 0%;
+		color: #cac8c4;
+	}
+
+	/* Changes the bookshelves list background and text color */
+	.drop-down-pop-up-container .drop-down-pop-up .std ul li a {
+		background: #3a3a3a;
+		color: #cac8c4;
+	}
+
+	/* Change bookshelf menu footer bar color */
+	.drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer,
+	.drop-down-pop-up-container .drop-down-pop-up .drop-down-pop-up-footer-right {
+		background: #737578;
+	}
+
+	/** End Add To Bookshelf Menu Changes **/
+
+	/* Change the user card popup's text content on hovering over a user's link */
+	.bookshelf-card .card-content,
+	.user-card .card-content {
+		background-color: #484848;
+		color: #a4a4a4;
+	}
+	.user-card .info {
+		background-color: #484848;
+		color: #a4a4a4;
+	}
+
+	/* Change the user card text content username link color */
+	.user-card h2 a {
+		color: #cac8c4;
+	}
+
+	/* Change the user card popup's background color and areas above and below the center text content */
+	.bookshelf-card,
+	.user-card {
+		background-color: #333;
+	}
+
+	/* Change the background and text color of the follow/following and drop down buttons in the top right of a user card. Also disable the text-shadow */
+	.bookshelf-card .top-info .button,
+	.user-card .top-info .button {
+		text-shadow: 0px 0px rgba(255, 255, 255, 0.15);
+		background-color: #484848;
+		color: #a4a4a4;
+	}
+
+	/* Change the background color of the follow/following and drop down buttons in the top right of a user card when hovered to fit the theme */
+	.bookshelf-card .top-info .button:hover,
+	.user-card .top-info .button:hover {
+		background-color: #a4a4a4;
+		color: #333;
+	}
+
+/**** End story page Changes ****/
+
+/**** Begin Chapter Changes ****/
+
+	/* Change the chapter block quotes to have a darker background and text */
+	#chapter-body .bbcode blockquote:not(.plaque) {
+		background: #333;
+		color: #cac8c4;
+		border-left: 0px solid currentColor;
+	}
+
+	/* Make the box shadow on box quotes not so large and bright */
+	.bbcode blockquote,
+	.article blockquote {
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		box-shadow: 0px 0px 0px 1px #cac8c4 inset;
+	}
+
+	/* Change the background of the toolbar right below the bookshelf buttons and rating box when reading a chapter */
+	.toolbar {
+		background: #5e636e;
+	}
+
+	/* Bring back the nice dark gradient for the formatting button and other buttons on this toolbar */
+	.toolbar .cell > ul > li > a {
+		background: #43474f;
+		background: -moz-linear-gradient(top, #43474f 0%, #32353b 100%);
+		background: -webkit-linear-gradient(top, #43474f 0%, #32353b 100%);
+		background: linear-gradient(to bottom, #43474f 0%, #32353b 100%);
+	}
+
+	/* Change the hover background and text color for these buttons to be more in line with the theme */
+	.toolbar .cell > ul > li > a:hover {
+		color: #000;
+		background-color: #cac8c4;
+	}
+
+/**** End Chapter Changes ****/
+
+/**** Begin Groups Page Changes ****/
+
+	/* Change the background color of group story folders on hover */
+	.folder_list table td .folder:hover {
+		background-color: #787878 !important;
+	}
+
+	/* Change the color of links in the groups pages to be more apparent, this covers all links it seems */
+	.folder_list table tbody td a,
+	.member_list table tbody td a,
+	.group_list table tbody td a {
+		color: #3aa019 !important;
+	}
+
+	/* Change the color of the title of threads/posts in the group forums */
+	.thread_list table td a.thread-title {
+		color: #3aa019;
+	}
+
+	/* Change the color of the non-title links in the group forums (usernames/dates) to be distinct */
+	.folder_list table tbody td a,
+	.member_list table tbody td a,
+	.group_list table tbody td a,
+	.thread_list table tbody td a,
+	.private-message-list tbody td a {
+		color: #787878;
+	}
+
+	/* Change the background and text color for the footer of the groups settings area (the save settings button bar) */
+	.content-box-footer {
+		background-color: #787878;
+		Color: #cac8c4;
+	}
+
+	/* Change the top part of the new group cards background and text color */
+	.group-card-list > li .group-card .group-card-content {
+		background: #333;
+		Color: #cac8c4;
+	}
+
+	/* Change the group name link text color */
+	.group-card .group-name a {
+		color: #cac8c4;
+	}
+
+	/* Change the group card background (Changes the bottom buttons of the group cards) */
+	.group-card {
+		background-color: #484848;
+	}
+
+	/* Change the text color of the numbers on the group cards */
+	.group-card .bottom-links a .number {
+		color: #cac8c4;
+	}
+
+	/* Change the title color of a group's actual page */
+	.group-header .group-header-base .group_name {
+		color: #cac8c4;
+	}
+
+	/* Change the background color of the buttons for a group's actual page (Stories, members, forums) */
+	.group-header .menu .buttons {
+		background-color: #656d75;
+	}
+
+	/* Change the hover color for the group's buttons to not be so blinding */
+	.group-header .menu .buttons li a:hover {
+		color: #000;
+		background-color: #cac8c4;
+	}
+
+	/* Change the background color of the new Folder, Admins, and Members sidebar boxes */
+	.folder_list table tr,
+	.member_list table tr,
+	.group_list table tr {
+		background-color: #333;
+	}
+
+	/* Changes the even number lines background color of the new Folder, Admins, and Members sidebar boxes */
+	.folder_list table tr:nth-child(2n+1),
+	.member_list table tr:nth-child(2n+1),
+	.group_list table tr:nth-child(2n+1) {
+		background-color: #2b2a2a;
+	}
+
+	/* Change the link text color for the Folder, Admins, and Members sidebar boxes. */
+	.folder_list table tbody td a,
+	.member_list table tbody td a,
+	.group_list table tbody td a {
+		color: #cac8c4;
+		font-weight: 600;
+	}
+
+	/* Change the top bar of the group forums background */
+	div.thread_list table tr.header td {
+		background: #5e636e !important;
+	}
+
+	/* Change the group forum threads background */
+	div.thread_list table td:first-child {
+		background-color: #333 !important;
+		color: #cac8c4 !important;
+	}
+
+	/* Change the group forum thread post count and last post boxes background */
+	div.thread_list table tr td {
+		background-color: #333 !important;
+		color: #cac8c4 !important;
+	}
+
+	/* Change the background color of the group story folders */
+	.folder_list table td .folder {
+		background-color: #484848;
+	}
+
+	/* Change the background color of the group story folders when you hover over them */
+	.folder_list table td .folder:hover {
+		background-color: #161616;
+	}
+
+	/**** End Groups Page Changes ****/
+
+	/**** Begin Private Message (PM) Page Changes ****/
+
+	/* Change the background color of the bar right below the header bar for the messages inbox */
+	.user-cp-page-tabs {
+		background-color: #484848;
+	}
+
+	/* Change the selected tab on the messages inbox page */
+	.user-cp-page-tabs ul li a.pm_tab_selected {
+		background-color: #333;
+		color: #cac8c4;
+		text-shadow: none;
+	}
+
+	/* Change the non-selected tab background and text color on the messages inbox page */
+	.user-cp-page-tabs ul li a {
+		background-color: #787878;
+		color: #cac8c4;
+		text-shadow: none;
+	}
+
+	/* Change the background color of the search bar area of the messages inbox page */
+	.user-cp-page-tabs > .right {
+		background-color: #484848;
+	}
+
+	/* Change the background color of the PM dropdown when you hover over the PM icon in the top left of the site */
+	.nav_bar .nav-bar-list > li > ul.drop-down-private-messages li,
+	.nav_bar .nav-bar-list > li .nav-bar-drop-down.drop-down-private-messages li {
+		background-color: #333;
+	}
+
+	/* Change the PM message checkbox area background */
+	.private-message-list tbody td.checkbox {
+		background-color: #333 !important;
+	}
+
+	/* Change the PM message sender info area background */
+	.private-message-list tbody td.sender {
+		background-color: #333 !important;
+	}
+
+	/* Change the PM page message preview box */
+	.private-message-list tbody td.pm-content {
+		background-color: #333 !important;
+	}
+
+	/* Change the color of the sender's name link text */
+	.private-message-list tbody td.sender a {
+		color: #3aa019;
+	}
+
+	/* Change the color of the PM title link text */
+	.private-message-list .title {
+		color: #cac8c4;
+	}
+
+	/* fix the PM message box top toolbar background */
+	.bbcode-editor .format-toolbar {
+		background: #6f7175;
+	}
+
+	/* Change the header background color for Private Messages */
+	.private_messages {
+		background: #787878;
+	}
+
+	/* Change the background color of the Private Messages box container to match the background */
+	.private_messages .previous_message {
+		background-color: #161616;
+	}
+
+	/* Change the background and text color of PM messages */
+	.private_messages .previous_message .message_content {
+		background-color: #333;
+		color: #cac8c4;
+	}
+
+/**** End Private Message (PM) Page Changes ****/
+
+/**** Begin FAQ page Changes ****/
+
+	/* Change the color of the FAQ headings to be readable again */
+	.faq main h1,
+	.tags_information main h1,
+	.rules main h1 {
+		color: #cac8c4;
+	}
+
+	/* Change the FAQ link text color */
+	.faq .answers > li .question .question-text {
+		color: #3aa019;
+	}
+
+	/* Change the FAQ link text color hover */
+	.faq .answers > li .question .question-text:hover {
+		color: #5aaC19;
+	}
+	.faq nav,
+	.tags_information nav,
+	.rules nav {
+		color: #cac8c4;
+		text-shadow: 0px 0px rgba(255, 255, 255, 0.3);
+	}
+
+	/* Change the FAQ heading text and symbol on the FAQ page 'sidebar' */
+	.faq nav h1,
+	.tags_information nav h1,
+	.rules nav h1 {
+		color: #cac8c4;
+	}
+
+	/* Change the Heading 2 text  on the FAQ page 'sidebar' */
+	.faq nav h2,
+	.tags_information nav h2,
+	.rules nav h2 {
+		color: #cac8c4;
+	}
+
+	/* Change the search symbol color on the FAQ page */
+	.fa-search::before {
+		color: #cac8c4 !important;
+	}
+
+/**** End FAQ page Changes ****/
+
+/**** Begin Rules page Changes ****/
+
+	/* Change the heading 2 text color to be readable */
+	.faq main h2,
+	.tags_information main h2,
+	.rules main h2 {
+		color: #cac8c4;
+	}
+
+	/* Change the list text to be readable */
+	.bbcode li,
+	.article li {
+		color: #777;
+	}
+
+/**** End Rules page Changes ****/
+
+/**** Begin BBCode Help page Changes ****/
+
+	/* Change the heading 2 text color to be readable */
+	.bbcode > h2,
+	.bbcode > h3,
+	.article > h2,
+	.article > h3 {
+		color: #cac8c4;
+	}
+
+	/* Change the code boxes on the BBcode pages to be less bright */
+	.bbcode pre code,
+	.article pre code {
+		background: #adadad;
+		color: #000;
+	}
+
+	/* Change the tag code boxes on the BBcode pages to be less bright */
+	.bbcode code,
+	.article code {
+		background: #adadad;
+		color: #000;
+	}
+
+/**** End BBCode Help page Changes ****/
+
+/**** Begin Tag Information page Changes ****/
+
+	/* Change the tag symbol color to be visible */
+	.fa-tags::before {
+		color: #cac8c4 !important;
+	}
+
+	/* Change the text color of the tag information content to be readable */
+	.tags_information .content_box,
+	.tags_information .user-cp-content-box {
+		color: #777777;
+	}
+
+/**** End Tag Information page Changes ****/
+
+/**** Begin Writing Guide page Changes ****/
+
+	/* Change the link text color in the table of contents to be readable */
+	.writing_guide .contents li.h1 a {
+		color: #cac8c4;
+	}
+
+	/* Change the writing guide table of content sub-links to be more visible */
+	.writing_guide .contents ul li a {
+		color: #3aa019;
+	}
+
+	/* Change the golden rule header to not be so blinding */
+	.writing_guide .golden {
+		color: #000;
+		background: #b6a71e;
+	}
+
+	/* Change the good example blockquote to not be so blinding */
+	.writing_guide blockquote.good {
+		color: #3aa019;
+		background: #2b7015;
+	}
+
+	/* Change the bad example blockquote to not be so blinding */
+	.writing_guide blockquote.bad {
+		color: #d46f5f;
+		background: #67443f;
+	}
+
+	/* Change the text color of the quotes on the writing page */
+	.writing_guide blockquote p {
+		color: #cac8c4;
+	}
+
+	/* Change the background color of odd table rows (used in Appendix A) */
+	.writing_guide table.solid tr.odd {
+		background: #484848;
+	}
+
+	/* Change the background color of even table rows (used in Appendix A) */
+	.writing_guide table.solid tr.even {
+		background: #787878;
+	}
+
+/**** End Writing Guide page Changes ****/
+
+/**** Begin News Feed Changes ****/
+
+	/* Change the background color of the news feed boxes */
+	.feed > li {
+		background: #333333;
+		color: #cac8c4;
+	}
+
+	/* Change the news feed title link text color */
+	.feed > li .feed_header a.title {
+		color: #cac8c4;
+	}
+
+	/* Change the group news feed link color text */
+	.feed > li .feed_body ul.group_stories a {
+		color: #3aa019;
+	}
+
+	/* Change the group news feed regular text color */
+	.feed > li .feed_body ul.group_stories ul li {
+		color: #cac8c4;
+	}
+
+	/* Change blog post feed text color */
+	.feed > li .feed_body {
+		color: #cac8c4;
+	}
+
+	/* Change the blog post info bar background and text color */
+	.feed > li .comment_count {
+		background-color: #484848;
+		color: #cac8c4;
+	}
+
+	/* Change the blog post user link in the info bar text color */
+	.feed > li .comment_count a {
+		color: #3aa019;
+	}
+
+	/* Change the read more button on the feed page to a more visible gradient */
+	.styled_button.styled_button_dark_grey {
+		background: #43474f;
+		background: -moz-linear-gradient(top, #43474f 0%, #32353b 100%);
+		background: -webkit-linear-gradient(top, #43474f 0%, #32353b 100%);
+		background: linear-gradient(to bottom, #43474f 0%, #32353b 100%);
+	}
+
+	/* Change the background of the buttons at the top of the news feed page to a less bright color */
+	.toggleable-radio {
+		background: #cac8c4;
+	}
+
+/**** End News Feed Changes ****/
+
+/**** Begin User Page Changes ****/
+
+	/* Change the background and text color of the user story gallery on a user's page */
+	.user-page .story-gallery > li {
+		background: #484848 !important;
+		color: #cac8c4;
+	}
+
+	/* Change the background of the rest of the user story gallery on a user's page */
+	.user-page .story-gallery {
+		background: #484848 !important;
+	}
+
+	/* Change the text color of the story titles in the story gallery on a user's page */
+	.user-page .story-gallery .name {
+		color: #cac8c4;
+	}
+
+	/* Change the text color of the author links in the story gallery on a user's page */
+	.user-page .story-gallery .author a {
+		color: #3aa019;
+	}
+
+	/* Change the background color of the blog post sidebar box */
+	.sidebar-blog-post-list > li {
+		background-color: #333;
+	}
+
+	/* Change the background and text color of the blog post sidebar info bar */
+	.sidebar-blog-post-list > li .info {
+		background: #484848;
+		color: #a4a4a4;
+	}
+
+	/* Change the body text color of blog post sidebar boxes */
+	.sidebar-blog-post-list .blog_post_preview {
+		color: #cac8c4;
+	}
+
+	/* Change the Link/Header link text color of the blog post sidebar boxes */
+	.sidebar-blog-post-list .blog_post_link {
+		color: #cac8c4;
+	}
+
+	/* Change the background and text color of the user groups list */
+	.user-page .left .module-groups .sidebar-group-list {
+		background: #333;
+	}
+
+	/* Change the background of the user groups box */
+	.user-page .left .module-groups .sidebar-group-list li {
+		background: #333;
+	}
+
+	/* Change the Following user sidebar box user link color */
+	.sidebar-user-list .name {
+		color: #3aa019;
+	}
+
+	/* Change the user info bar buttons background and text color */
+	.user-page-header .tabs li a {
+		background: #484848;
+		text-shadow: 0px 0px rgba(255, 255, 255, 0.4);
+		color: #a4a4a4;
+	}
+
+	/* Change the user info bar buttons number/icon text color */
+	.user-page-header .tabs li a .number {
+		color: #cac8c4;
+	}
+
+	/* Change the user info bar buttons background and text color on hover */
+	.user-page-header .tabs li a:hover {
+		background: #a4a4a4;
+		color: #333;
+	}
+
+	/* Change the user info bar selected button background and text color */
+	.user-page-header .tabs li.selected a {
+		background: #333;
+		color: #cac8c4;
+	}
+
+	/* Change the user info bar buttons number/icon text color on hover */
+	.user-page-header .tabs li a .number:hover {
+		color: #333;
+	}
+
+	/* Change the Following user sidebar box background on hover */
+	.sidebar-user-list li > a:hover {
+		background: #484848;
+		text-decoration: none;
+	}
+
+	/* Change the background color of the info bar for the following user sidebar box */
+	.user-page .module-watching .watching-header,
+	.user-page .module-watching .watching-footer {
+		background: #d7ce7d;
+	}
+
+	/* Change the background of user page sidebar boxes */
+	.user-page .content_box,
+	.user-page .user-cp-content-box {
+		background-color: #333;
+		color: #cac8c4;
+	}
+
+	/* Change the background color of the user info bar */
+	.story-page-header,
+	.user-page-header {
+		background-color: #333;
+		color: #cac8c4;
+		box-shadow: 0px -0px 0 #b9b4ab inset;
+		text-shadow: 0px 0px rgba(255, 255, 255, 0.3);
+		border-bottom: 0px solid white;
+	}
+
+	/* Change the color of the Online text for the mini user info bar box */
+	.user-page-header .online {
+		color: #3aa019;
+	}
+
+	/* Change background and text color for the mini info box for the user header */
+	.user-page-header .mini-info-box {
+		background: #484848 !important;
+		color: #cac8c4;
+		text-shadow: none;
+	}
+
+	/* Change the username link on the user info bar */
+	.story-page-header > .inner h1 a,
+	.user-page-header > .inner h1 a {
+		color: #cac8c4;
+	}
+
+	/* Change the color of the following button gradient if you're following a user to be more noticeable */
+	button.styled_button.styled_button_dark_grey.button-follow.button_toggle.button_user_watch[data-watch="true"] {
+		background: #81b945;
+		background: -moz-linear-gradient(top, #81b945 0%, #6fa03c 100%);
+		background: -webkit-linear-gradient(top, #81b945 0%, #6fa03c 100%);
+		background: linear-gradient(to bottom, #81b945 0%, #6fa03c 100%);
+		text-shadow: 0px 0px rgba(255, 255, 255, 0.3)
+	}
+
+/**** End User Page Changes ****/
+
+/**** End FIMFic 4.0 Fixes ****/
+/**** ----------------------------------------------------------- ****/
